@@ -567,6 +567,10 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
 .notfound > img{display:none}
 .notfound p:first-child{font-size:11px !important;font-weight:600 !important;letter-spacing:.12em !important;text-transform:uppercase;color:var(--faint) !important}
 .notfound h1{font-size:36px !important;font-weight:500 !important;letter-spacing:-.02em !important;text-transform:none !important;color:var(--fg)}
+
+/* consent checkbox: keep it out of the text-field styles and align it with the first line of its label */
+.check{align-items:flex-start !important}
+.check input[type="checkbox"]{flex:0 0 18px;width:18px !important;height:18px !important;min-height:0 !important;padding:0 !important;margin:calc((1.6em - 18px) / 2) 0 0 !important;border:0 !important;border-radius:4px;background:none !important;box-shadow:none !important;font-size:inherit}
 </style>
 </head>
 <body class="locked">
