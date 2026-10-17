@@ -22,7 +22,8 @@
 </script>
 <style>
 /* ------------------------------------------------------------------
-   PP Neue Montreal — licensed font (approved by the client).
+   PP Neue Montreal — licensed font (approved by the client). Licence for web and print
+   to be purchased by LIONS, in its own name: https://pangrampangram.com/products/neue-montreal
    Uncomment and point to the licensed files once they are delivered.
    ------------------------------------------------------------------
 @font-face{font-family:"PP Neue Montreal";src:url("fonts/PPNeueMontreal-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
@@ -77,7 +78,7 @@ button{font-family:inherit}
 .site-header .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:10px;padding-bottom:10px}
 .wordmark{font-size:16px;font-weight:400;letter-spacing:.34em;color:var(--paper);text-decoration:none;padding:12px 0}
 .head-right{display:flex;align-items:center;gap:28px}
-.nav{display:flex;align-items:center;gap:28px}
+.nav{display:flex;align-items:center;gap:24px}
 .nav a{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--ash);padding:14px 0 13px;border-bottom:1px solid transparent}
 .overlay .nav a{color:var(--bone)}
 .nav a[aria-current="page"]{color:var(--paper);border-bottom-color:var(--accent)}
@@ -91,7 +92,7 @@ button{font-family:inherit}
 .menu-btn{display:none;align-items:center;gap:14px;min-height:44px;background:transparent;border:0;color:var(--bone);font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding:0}
 .menu-btn span.lines{display:inline-flex;flex-direction:column;gap:6px}
 .menu-btn span.lines i{display:block;width:26px;height:1px;background:currentColor}
-@media (max-width:900px){ .head-right .nav,.head-right .lang{display:none} .menu-btn{display:inline-flex} }
+@media (max-width:1180px){ .head-right .nav,.head-right .lang{display:none} .menu-btn{display:inline-flex} }
 
 /* mobile menu */
 .menu-panel{position:fixed;inset:0;z-index:60;background:var(--ink);display:flex;flex-direction:column;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 10px) var(--pad) calc(env(safe-area-inset-bottom,0px) + 28px)}
@@ -222,6 +223,7 @@ a.card:hover img{transform:scale(1.03)}
 .links-list li{border-bottom:1px solid #8C857E}
 .links-list a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;text-decoration:none;font-size:16px}
 .links-list span{font-size:14px;color:#4E4943}
+.links-list .tbc{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;font-size:16px;color:var(--graphite)}
 
 /* article */
 .art-head{max-width:960px;margin:0 auto;padding:24px var(--pad) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:24px}
@@ -335,6 +337,126 @@ mark{background:transparent;color:var(--accent)}
 @media (prefers-reduced-motion:reduce){ .f-loba-txt{transition:none} }
 @media (max-width:960px){ .f-top{grid-template-columns:1fr} }
 @media (max-width:600px){ .f-cols{grid-template-columns:1fr 1fr} .f-cols > :nth-child(2){grid-column:1 / -1;grid-row:2} .f-bottom{flex-direction:column;align-items:flex-start} }
+
+/* social icons */
+.social{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--rule-2);color:var(--mist);text-decoration:none}
+.social a:hover{color:var(--paper);border-color:var(--line)}
+.light .social a{border-color:#A39B92;color:var(--graphite)}
+
+/* newsletter bar */
+.newsletter{border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 56px;padding-top:40px;padding-bottom:40px}
+.newsletter .txt{flex:1 1 320px;max-width:520px}
+.newsletter h2{margin:0 0 8px;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dust)}
+.newsletter p{margin:0;font-size:15px;line-height:1.7;color:var(--ash)}
+.newsletter form{flex:1 1 380px;max-width:560px;display:flex;flex-direction:column;gap:10px}
+.nl-row{display:flex;gap:12px;align-items:stretch}
+.nl-row input{flex:1;min-width:0;min-height:48px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--paper);font-family:inherit;font-size:16px;padding:0 2px}
+.nl-row input::placeholder{color:#9A9189}
+.nl-row input[aria-invalid="true"]{border-bottom-color:var(--error)}
+.nl-note{margin:0;font-size:13px;line-height:1.6;color:var(--dust)}
+.nl-note a{color:var(--mist)}
+@media (max-width:480px){ .nl-row{flex-direction:column} }
+
+/* highlight pop-up */
+.promo{width:min(560px,calc(100vw - 32px));max-width:none;padding:0;border:1px solid var(--rule-2);background:var(--ink);color:var(--bone)}
+.promo::backdrop{background:rgba(6,6,6,.78)}
+.promo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.promo .body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:14px}
+.promo h2{margin:0;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.2;color:var(--paper)}
+.promo p{margin:0;font-size:16px;line-height:1.7;color:var(--mist)}
+.promo .close{position:absolute;top:10px;right:10px;background:rgba(18,17,16,.82);color:var(--paper)}
+
+/* area pages */
+.area-hero{min-height:max(520px,74svh);align-items:stretch;justify-content:flex-end;padding:0}
+.area-hero .inner{width:100%;max-width:var(--max);margin:0 auto;padding:140px var(--pad) clamp(56px,7vw,96px);display:flex;flex-direction:column;gap:22px}
+.area-hero h1{text-align:left;font-size:clamp(48px,9vw,128px);font-weight:200;letter-spacing:.04em;opacity:1;animation:none}
+.area-hero .slogan{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1.25;letter-spacing:0;text-transform:none;text-align:left;color:#fff;opacity:1;animation:none}
+.area-hero .phil{margin:0;max-width:40em;font-size:18px;line-height:1.75;letter-spacing:0;text-transform:none;text-align:left;color:#EDE7E0;opacity:1;animation:none;font-weight:400}
+.area-hero .eyebrow{margin:0;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#F0DFCF;text-align:left;opacity:1;animation:none}
+.areas a.more{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:10px 0}
+.svc{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.svc > div{padding:28px 0;border-top:1px solid var(--rule)}
+.svc dt{font-size:20px;font-weight:400;color:var(--paper);margin-bottom:10px}
+.svc dd{margin:0;font-size:16px;line-height:1.75;color:var(--ash)}
+@media (max-width:760px){ .svc{grid-template-columns:1fr} }
+.go{font-size:13px;letter-spacing:.06em;color:var(--dust)}
+
+/* home talent slideshow */
+.car-ctl{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.car-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--rule-2);background:transparent;color:var(--bone);cursor:pointer}
+.car-btn:hover{border-color:var(--line);color:var(--paper)}
+.car-btn:disabled{opacity:.35;cursor:default}
+.car-ctl .link-caps{margin-left:12px}
+.car-track{list-style:none;margin:0;padding:0 0 6px;display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px) / 4);column-gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.car-track::-webkit-scrollbar{display:none}
+.car-track > li{scroll-snap-align:start}
+@media (max-width:1024px){ .car-track{grid-auto-columns:calc((100% - 24px) / 2.3)} }
+@media (max-width:600px){ .car-track{grid-auto-columns:78%;column-gap:16px} }
+
+/* talent profile: common structure, per-profile personality */
+.t-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--night)}
+.t-hero .area{margin:0;font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#F0DFCF}
+.t-hero h1{margin:0;font-size:clamp(46px,8.6vw,136px);font-weight:200;letter-spacing:.01em;line-height:.98;color:#fff}
+.t-hero .inner{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad) clamp(48px,6vw,88px)}
+.t-hero.full{min-height:max(560px,94svh);display:flex;align-items:flex-end}
+.t-hero.full > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;z-index:-2;background:var(--night)}
+.t-hero.full::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,7,6,.78) 0,rgba(8,7,6,.45) 90px,rgba(8,7,6,0) 200px),linear-gradient(0deg,rgba(8,7,6,.94) 0%,rgba(8,7,6,.62) 34%,rgba(8,7,6,.1) 64%,rgba(8,7,6,0) 100%)}
+.t-hero.full .inner{display:flex;flex-direction:column;gap:16px;padding-top:140px}
+.t-hero.split .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:end;gap:32px 72px;padding-top:40px}
+.t-hero.split.rev .inner{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.t-hero.split.rev .media{order:2}
+.t-hero.split img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.t-hero.split .txt{display:flex;flex-direction:column;gap:16px;padding-bottom:8px}
+.t-hero.split.rev .txt{text-align:right;align-items:flex-end}
+@media (max-width:860px){ .t-hero.split .inner,.t-hero.split.rev .inner{grid-template-columns:1fr} .t-hero.split.rev .media{order:0} .t-hero.split.rev .txt{text-align:left;align-items:flex-start} }
+.t-body{background:var(--ink)}
+.t-body.t-night{background:var(--night)}
+.t-body.light{background:var(--stone)}
+.t-bio{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px 64px}
+.t-bio .lead{margin:0 0 20px;font-size:clamp(22px,2.3vw,30px);line-height:1.5;font-weight:300;max-width:30em}
+.t-bio .rest{margin:0;font-size:17px;line-height:1.8;max-width:42em;color:var(--mist)}
+.light .t-bio .rest{color:var(--clay-text)}
+@media (max-width:760px){ .t-bio{grid-template-columns:1fr} }
+.t-soc{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px 64px;padding-bottom:clamp(48px,6vw,88px)}
+@media (max-width:760px){ .t-soc{grid-template-columns:1fr} }
+.t-social{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.t-social li > a,.t-social li > div{display:flex;align-items:center;gap:18px;padding:20px 22px;border:1px solid var(--rule-2);text-decoration:none;color:inherit;min-height:96px}
+.t-social li > a:hover{border-color:var(--line)}
+.t-social .ico{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--rule-2);flex-shrink:0}
+.t-social .tx{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.t-social .nw{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dust)}
+.t-social .h{font-size:16px;color:var(--paper)}
+.t-social .n{font-size:15px;color:var(--ash)}
+.t-social .go{font-size:18px}
+.light .t-social li > a,.light .t-social li > div,.light .t-social .ico{border-color:#A39B92}
+.light .t-social .h{color:var(--graphite)} .light .t-social .n,.light .t-social .nw{color:var(--clay-text)}
+.t-high{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px 64px;align-items:center}
+.t-high .media img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.t-high .media-link{display:block}
+.t-high .txt{display:flex;flex-direction:column;gap:16px}
+.t-high h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,44px);line-height:1.15}
+.t-high .txt p:not(.kicker){margin:0;font-size:17px;line-height:1.75;color:var(--ash)}
+.light .t-high .txt p:not(.kicker){color:var(--clay-text)}
+.light .kicker{color:#7A4127}
+@media (max-width:860px){ .t-high{grid-template-columns:1fr} }
+.t-gal{list-style:none;margin:0;padding:0}
+.t-gal figure{margin:0}
+.t-gal figcaption{margin-top:10px;font-size:14px;line-height:1.5;color:var(--dust);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.light .t-gal figcaption{color:var(--clay-text)}
+.t-gal img{width:100%;object-fit:cover}
+.t-gal.mosaic{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(180px,20vw,300px);gap:16px}
+.t-gal.mosaic li:first-child{grid-column:span 2;grid-row:span 2}
+.t-gal.mosaic li figure{height:100%;display:flex;flex-direction:column}
+.t-gal.mosaic li img{flex:1;min-height:0;height:100%}
+.t-gal.columns{columns:3;column-gap:16px}
+.t-gal.columns li{break-inside:avoid;margin-bottom:24px}
+.t-gal.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.t-gal.duo li:nth-child(even){margin-top:clamp(40px,8vw,120px)}
+.t-gal.duo img{aspect-ratio:4/5}
+@media (max-width:860px){ .t-gal.mosaic{grid-template-columns:repeat(2,minmax(0,1fr))} .t-gal.mosaic li:first-child{grid-column:span 2;grid-row:span 1} .t-gal.columns{columns:2} }
+@media (max-width:520px){ .t-gal.mosaic{grid-template-columns:1fr;grid-auto-rows:auto} .t-gal.mosaic li:first-child{grid-column:span 1} .t-gal.mosaic li img{aspect-ratio:4/5;height:auto} .t-gal.columns{columns:1} .t-gal.duo{grid-template-columns:1fr} .t-gal.duo li:nth-child(even){margin-top:0} }
+.tone-gal{filter:none}
 
 /* cookie */
 .cookie{position:fixed;left:20px;right:20px;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:50;max-width:460px;background:var(--panel);border:1px solid var(--rule-2);padding:22px;display:flex;flex-direction:column;gap:16px}
@@ -636,6 +758,60 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
 .pager .status{font-size:12px;color:var(--faint)}
 .notfound::after{display:none}
 .mini img.tone-portrait{border-radius:999px}
+.links-list .tbc{color:var(--fg)} .links-list .tbc span{color:var(--faint)}
+.t-hero h1{font-weight:500 !important;font-family:var(--sans) !important;color:#fff !important}
+.t-hero .area{color:var(--fg2) !important;font-size:11px;letter-spacing:.12em}
+.t-hero.full > img{border:0 !important;border-radius:0 !important}
+.t-hero.split img{border-radius:12px}
+.t-body{background:var(--bg)} .t-body.t-night{background:#000}
+.t-bio .lead{font-size:clamp(18px,2vw,22px);color:var(--fg);font-weight:400} .t-bio .rest{color:var(--fg2);font-size:15px}
+.t-social li > a,.t-social li > div{border-color:var(--border);border-radius:12px;background:var(--surface)}
+.t-social .ico{border-color:var(--border-2);border-radius:8px} .t-social .nw{color:var(--faint);font-size:11px;letter-spacing:.12em}
+.t-social .h{color:var(--fg)} .t-social .n{color:var(--muted)}
+.t-high h3{font-family:var(--sans) !important;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:var(--fg)}
+.t-high .txt p:not(.kicker){color:var(--muted);font-size:15px}
+.t-gal figcaption{color:var(--faint);font-size:12px}
+.car-btn{border-color:var(--border-2);color:var(--fg);border-radius:8px} .car-btn:hover{background:var(--surface)}
+.svc > div{border-top-color:var(--border)} .svc dt{font-size:17px;font-weight:500;color:var(--fg)} .svc dd{font-size:14px;color:var(--muted)}
+.go{color:var(--faint);font-size:12px}
+.social a{border-color:var(--border-2);color:var(--fg2);border-radius:8px} .social a:hover{color:var(--fg);background:var(--surface)}
+.newsletter{border-top-color:var(--border)} .newsletter h2{font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--faint)} .newsletter p{font-size:14px;color:var(--muted)}
+.nl-row input{border:1px solid var(--border-2);border-radius:8px;background:var(--surface);padding:0 14px;color:var(--fg);font-size:14px}
+.nl-note{color:var(--faint);font-size:12px} .nl-note a{color:var(--fg2)}
+.promo{border-radius:16px;background:var(--surface);border-color:var(--border-2);overflow:hidden} .promo img{border-radius:0 !important;border-width:0 0 1px 0 !important}
+.promo h2{font-family:var(--sans);font-size:24px;font-weight:500;color:var(--fg)} .promo p{color:var(--fg2);font-size:14px}
+.area-hero h1{font-weight:500 !important;text-align:left}
+.area-hero .slogan{letter-spacing:-.01em !important;text-transform:none !important;font-family:var(--sans) !important;font-style:normal !important;font-weight:500 !important;font-size:clamp(22px,2.6vw,32px) !important;color:#fff !important}
+.area-hero .phil{font-size:15px !important;color:var(--fg2) !important;letter-spacing:0 !important;font-weight:400 !important}
+.area-hero .eyebrow{color:var(--fg2) !important;font-size:11px !important;letter-spacing:.12em !important}
+.area-hero > img{background-position:right 6% bottom 8%,0 0,0 0 !important}
+
+/* ---------- Spotify player (fixed, bottom right, every page) ---------- */
+:root{--sp-gap:6px;--sp-bottom:32px;--sp-lift:0px;--sp-tab-w:36px;--sp-h:80px}
+html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) + 16px)}
+.sp-player{position:fixed;right:calc(var(--sp-gap) + env(safe-area-inset-right,0px));bottom:calc(var(--sp-bottom) + var(--sp-lift) + env(safe-area-inset-bottom,0px));z-index:58;width:var(--sp-tab-w);height:var(--sp-h);transition:bottom .3s ease}
+.sp-tab{position:relative;z-index:2;width:var(--sp-tab-w);height:var(--sp-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:0;border:0;border-radius:12px;background:#1e1e1e;color:#fff;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.sp-tab:hover{background:#2a2a2a}
+.sp-tab:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.sp-arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.sp-logo{transition:opacity .25s ease,transform .25s ease,max-height .3s ease,margin .3s ease;max-height:20px}
+.sp-player.is-open .sp-arrow{transform:rotate(180deg)}
+.sp-player.is-open .sp-logo{opacity:0;transform:scale(.6);max-height:0;margin-top:-10px}
+/* the panel sits behind the tab and slides out to the left */
+.sp-clip{position:absolute;z-index:1;right:calc(var(--sp-tab-w) - 12px);bottom:0;width:332px;height:var(--sp-h);overflow:hidden;border-radius:12px 0 0 12px;pointer-events:none}
+.sp-panel{width:100%;height:100%;padding-right:12px;background:#282828;border-radius:12px 0 0 12px;transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s linear .45s}
+.sp-player.is-open .sp-clip{pointer-events:auto}
+.sp-player.is-open .sp-panel{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.sp-panel iframe{display:block;width:320px;height:80px;border:0;border-radius:12px}
+.sp-fallback{position:absolute;inset:0 12px 0 0;display:flex;align-items:center;gap:12px;padding:0 16px;font-size:12px;color:#b3b3b3;pointer-events:none}
+@media (max-width:600px){
+  :root{--sp-bottom:16px}
+  .sp-clip{width:calc(100vw - var(--sp-gap) - var(--sp-tab-w) - 8px + 12px)}
+  .sp-panel iframe{width:100%}
+}
+@media (prefers-reduced-motion:reduce){ .sp-arrow,.sp-logo,.sp-panel,.sp-player{transition:none !important} }
+/* keep bottom-right content clear of the tab */
+.site-footer .wrap{padding-right:max(var(--pad), calc(var(--sp-gap) + var(--sp-tab-w) + 20px))}
 </style>
 </head>
 <body class="locked">
@@ -668,9 +844,10 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
     <div class="head-right">
       <nav class="nav" data-i18n-aria="navMain">
         <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
+        <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
+        <a href="#/public-strategy" data-key="public" data-i18n="nav_public"></a>
         <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
         <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
-        <a href="#/cases" data-key="cases" data-i18n="nav_cases"></a>
         <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
         <a class="icon-btn" href="#/search" data-key="search" data-i18n-aria="openSearch" style="border:0;padding:0;margin-right:-10px">
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6.75" cy="6.75" r="5.25"/><path d="M10.6 10.6L15 15"/></svg>
@@ -693,9 +870,10 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
   </div>
   <nav data-i18n-aria="navMobile">
     <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
+    <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
+    <a href="#/public-strategy" data-key="public" data-i18n="nav_public"></a>
     <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
     <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
-    <a href="#/cases" data-key="cases" data-i18n="nav_cases"></a>
     <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
     <a href="#/search" data-key="search" data-i18n="nav_search"></a>
   </nav>
@@ -703,6 +881,11 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
     <button type="button" data-lang="en" lang="en" aria-label="English">EN</button><span class="sep" aria-hidden="true">|</span><button type="button" data-lang="pt" lang="pt-PT" aria-label="Português">PT</button>
   </div>
   <div class="foot">
+    <ul class="social" data-i18n-aria="social">
+  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+  <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg></a></li>
+  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg></a></li>
+</ul>
     <span data-i18n="email_value"></span>
     <span>Rua Castilho 39, 13.º C, 1250-068 Lisboa</span>
   </div>
@@ -724,6 +907,8 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
           <h2 class="f-h" id="fh-explore" data-i18n="f_explore"></h2>
           <ul class="f-list">
             <li><a href="#/talent" data-i18n="nav_talent"></a></li>
+            <li><a href="#/culture" data-i18n="nav_culture"></a></li>
+            <li><a href="#/public-strategy" data-i18n="nav_public"></a></li>
             <li><a href="#/approach" data-i18n="nav_approach"></a></li>
             <li><a href="#/journal" data-i18n="nav_journal"></a></li>
             <li><a href="#/cases" data-i18n="nav_cases"></a></li>
@@ -741,14 +926,27 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
         </div>
         <div>
           <h2 class="f-h" id="fh-follow" data-i18n="f_follow"></h2>
-          <ul class="f-list" aria-labelledby="fh-follow">
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li>
-            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-          </ul>
+<ul class="social" aria-labelledby="fh-follow">
+  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+  <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg></a></li>
+  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg></a></li>
+</ul>
         </div>
       </div>
     </div>
+    <section class="newsletter" aria-labelledby="nl-t">
+      <div class="txt"><h2 id="nl-t" data-i18n="nl_title"></h2><p data-i18n="nl_text"></p></div>
+      <form id="nlForm" novalidate>
+        <label for="nl-email" class="sr-only" data-i18n="nl_label"></label>
+        <div class="nl-row">
+          <input id="nl-email" type="email" autocomplete="email" data-i18n-ph="nl_ph" aria-describedby="nl-err nl-note">
+          <button class="btn btn-line" type="submit" data-i18n="nl_btn"></button>
+        </div>
+        <span class="err" id="nl-err" hidden data-i18n="e_email"></span>
+        <p class="nl-note" id="nl-note" data-i18n-html="nl_note"></p>
+        <p class="nl-note" id="nl-ok" role="status" hidden></p>
+      </form>
+    </section>
     <div class="f-bottom">
       <span class="f-copy" data-i18n="f_copy"></span>
       <div class="f-legal">
@@ -767,6 +965,20 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
   </div>
 </footer>
 
+
+<aside class="sp-player" id="spPlayer" aria-label="Music player">
+  <div class="sp-clip">
+    <div class="sp-panel" id="spPanel">
+      <span class="sp-fallback" aria-hidden="true">Spotify · LIONS playlist</span>
+      <iframe id="spFrame" title="Spotify: LIONS playlist" data-src="https://open.spotify.com/embed/playlist/69ewM44u7Bj10Y46EBf4Wu?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+  <button type="button" class="sp-tab" id="spTab" aria-expanded="false" aria-controls="spPanel" aria-label="Open music player">
+    <svg class="sp-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg>
+    <svg class="sp-logo" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M6.6 9.2c3.6-1.1 7.6-.8 10.9 1.1M7.2 12.3c2.9-.8 6-.5 8.6.9M7.8 15.2c2.2-.6 4.5-.4 6.4.7" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+</aside>
+
 <dialog class="vmodal" id="vmodal" aria-labelledby="vmTitle">
   <div class="vm-bar">
     <p id="vmTitle" class="kicker" style="margin:0"></p>
@@ -778,6 +990,17 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
       <span class="vm-play" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 14 16" fill="#F4F0EB"><path d="M0 0l14 8-14 8z"/></svg></span>
       <p style="margin:0" data-i18n-html="vm_note"></p>
     </div>
+  </div>
+</dialog>
+
+<dialog class="promo" id="promo" aria-labelledby="promoTitle">
+  <button class="icon-btn close" type="button" id="promoClose" data-i18n-aria="promo_close"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
+  <img id="promoImg" alt="" class="tone">
+  <div class="body">
+    <p class="kicker" style="margin:0" data-i18n="promo_kicker"></p>
+    <h2 id="promoTitle"></h2>
+    <p id="promoText"></p>
+    <a class="btn btn-solid" id="promoLink" style="align-self:flex-start"></a>
   </div>
 </dialog>
 
@@ -804,25 +1027,55 @@ let lang = "en";
 try { const s = localStorage.getItem("lions-lang"); if (s === "en" || s === "pt") lang = s; } catch(e){}
 const L = o => (o && typeof o === "object" && !Array.isArray(o)) ? (o[lang] !== undefined ? o[lang] : o.en) : o;
 const REV = "[Tradução a rever]";
+const P = (en, pt) => ({ en, pt });
 
 /* Claims and manifesto lines: always in English, in both languages */
 const CLAIM = "Talent · Culture · Public Strategy";
+/* Claims & Manifesto (client list). Always in English, also in the PT version. */
 const M = {
-  vision: "We represent vision.<br>We build legacy.",
-  less: "Less image. More presence.",
-  represent: "Represent less, build more.",
-  connect: "Connect culture, talent and opportunity."
+  c01: "We represent culture, we build impact.",
+  c02: "Global reach. Local insight. Cultural impact.",
+  c03: "We connect culture, talent and opportunity.",
+  c04: "Curated talent, strategic vision.",
+  c05: "We move culture forward.",
+  c06: "Time. Space. Influence.",
+  c07: "LIONS doesn’t represent more. We represent better."
 };
+const moment = (claim, note, cls) => `<section class="moment ${cls || "light"}" aria-label="${esc(claim)}"><blockquote lang="en">${claim}</blockquote>${note ? `<p>${note}</p>` : ""}</section>`;
 const en = s => `<span lang="en">${s}</span>`;
 
 const T = {
 en: {
   skip:"Skip to content", home:"LIONS, homepage", navMain:"Main", navMobile:"Mobile", menu:"Menu", closeMenu:"Close menu", openSearch:"Search the site", langGroup:"Language",
   nav_talent:"Talent", nav_approach:"Approach", nav_journal:"Journal", nav_cases:"Cases", nav_contact:"Contact", nav_search:"Search",
+  nav_culture:"Culture", nav_public:"Public Strategy", social:"Social media",
+  discover:"Discover", area_label:"Area",
+  talent_phil:"We represent a small number of actors, journalists, athletes and creators, and we stay with them for the long term. Every career has one plan, one strategist and a clear idea of what it should look like in five years.",
+  roster:"Roster", roster_intro:"Each name on this page has a dedicated strategist and a team behind them. That is why the list is short.",
+  culture_phil:"Culture is where reputations are made before they are noticed. We help films, festivals, exhibitions and cultural institutions reach the audience their work deserves, with communication that respects the work itself.",
+  culture_what:"What we do in culture",
+  cw_premieres:"Premieres and launches", cw_premieres_d:"Communication plans for films, series and documentaries, from the first announcement to the release.",
+  cw_events:"Events and red carpets", cw_events_d:"Guest strategy, press and image management for premieres, galas and festivals.",
+  cw_inst:"Cultural institutions", cw_inst_d:"Positioning and seasons for museums, theatres, foundations and festivals.",
+  cw_visits:"Visits and partnerships", cw_visits_d:"Programmes for international guests and public figures in Portugal, and partnerships between culture and brands.",
+  projects:"Projects", projects_intro:"A selection of cultural projects. Each card opens the project’s own page or a related article.",
+  ext:"External link", internal:"Read more",
+  public_phil:"Institutions, brands and projects are judged by how clearly they explain themselves. We build public positioning that is coherent, credible and sustained over time, so that what you do is understood, not just seen.",
+  public_what:"What we do",
+  ps_pos:"Positioning and narrative", ps_pos_d:"Defining what an institution, brand or project stands for, and how to say it in public.",
+  ps_comm:"Strategic communication", ps_comm_d:"Communication plans, key messages and calendars aligned with the organisation’s goals.",
+  ps_voice:"Public presence and spokespeople", ps_voice_d:"Preparation of leaders and spokespeople for interviews, panels and public moments.",
+  ps_rep:"Reputation and stakeholders", ps_rep_d:"Relations with press, partners and institutions, and support in sensitive moments.",
+  public_work:"Selected work",
+  nl_title:"Newsletter", nl_text:"Occasional news from LIONS: talent, culture and public strategy. No noise.",
+  nl_label:"Email address for the newsletter", nl_ph:"Your email address", nl_btn:"Subscribe",
+  nl_note:"By subscribing you agree to receive emails from LIONS, as described in the <a href=\"#/privacy\">privacy policy</a>. You can unsubscribe at any time.",
+  nl_ok:"Thank you. Please confirm your subscription in the email we have just sent you. [Integration with the newsletter platform to be configured.]",
+  promo_kicker:"Highlight", promo_close:"Close highlight", promo_title:"[Public figure] in Lisbon", promo_text:"[Short note about the visit or event, with date and place. Managed in the back office and shown once per visit.]", promo_link:"Find out more",
   scroll:"Scroll",
   manifesto_p:"We work with a selected group of talents, creators and institutions. We shape their image, build their narrative and position them in culture with intention.",
   areas_label:"Three areas",
-  area_talent:"Representation and long-term career strategy for a small roster of actors, documentary filmmakers and creators.",
+  area_talent:"Representation and long-term career strategy for a small roster of actors, journalists, athletes and creators.",
   area_culture:"Films, festivals, cultural projects and institutions: communication that respects the work and finds its audience.",
   area_public:"Strategic communication and public positioning for institutions, brands and projects.",
   view_all_talent:"View all talent",
@@ -834,12 +1087,20 @@ en: {
   founder_bio:"Entrepreneur and founder of Naughty Boys, the agency he led for [13/14 years – to be confirmed] and a reference in the Portuguese talent and media market. A specialist in strategic positioning, representation and building relationships between personalities, brands and cultural projects, he has built a career on creating relevance, reputation and impact.",
   founder_alt:"Portrait of João Belo, founder of LIONS (placeholder)",
   journal_label:"Journal", view_all_articles:"View all articles",
-  cases_label:"Selected cases", view_all_cases:"View all cases",
+  cases_label:"Culture", view_all_cases:"View all projects",
   cta_title:"Start a conversation", cta_text:"For talent, cultural projects and public strategy, write to us. Every message is read by the team.", cta_btn:"Contact the agency",
-  talent_title:"Talent", talent_intro:"Actors, documentary filmmakers and creators. A deliberately small roster, so each career gets the attention it deserves.",
+  talent_title:"Talent", talent_intro:"Actors, journalists, athletes and creators. A deliberately small roster, so each career gets the attention it deserves.",
   all_talent:"All talent", portrait_of:"Portrait of", portrait_cap:"PORTRAIT TO BE SUPPLIED",
   selected_work:"Selected work", online:"Online", online_text:"Official channels. For bookings and partnerships, please contact LIONS.",
-  optional:"optional", other_link:"Other link", opens_new:"(opens in a new tab)",
+  optional:"optional", other_link:"Other link", tiktok_tbc:"[Official account to be confirmed]",
+  c07_note:"A short roster is a choice: every name has a strategist, a team and a plan.",
+  c05_note:"From the first announcement to the last night of the season.",
+  c02_note:"International relationships, local knowledge, and work that leaves a mark in culture.",
+  c03_note:"Three areas, one way of working: strategy first, visibility as a consequence.",
+  followers:"followers", followers_tbc:"[Followers to be confirmed]", estimate:"estimate", visit_profile:"Visit profile",
+  tp_bio:"Bio", tp_social:"Social media", tp_high:"Highlight", tp_gallery:"Gallery", gal_cap_tbs:"[Caption to be supplied]",
+  prev_talent:"Previous talents", next_talent:"Next talents", slide_of:"of",
+ opens_new:"(opens in a new tab)",
   approach_title:"Approach",
   approach_intro:"We do fewer things, for fewer people, for longer. Every talent, project and institution has one plan, built with them.",
   areas_title:"Three areas",
@@ -871,13 +1132,13 @@ en: {
   search_title:"Search", search_ph:"Search talent, articles and cases", clear:"Clear search",
   s_type:"Type a word to search talent, articles and cases.", s_one:"1 result for", s_many:"results for", s_none:"No results",
   s_nomatch:"Nothing matches “{q}”. Check the spelling, try a talent’s name, or browse the sections below.",
-  type_talent:"Talent", type_case:"Case", type_page:"Page",
+  type_talent:"Talent", type_case:"Culture", type_ps:"Public Strategy", type_page:"Page",
   nf_eyebrow:"Error 404", nf_title:"This page doesn’t exist", nf_text:"The link may be out of date, or the address mistyped. Go back to the homepage, or search for what you were looking for.", nf_home:"Go to the homepage", nf_search:"Search the site",
   cookie_region:"Cookie consent",
   cookie_text:"We use cookies to measure visits and improve the site. Analytics cookies only run if you accept them. <a href=\"#/privacy\">Read the privacy policy</a>.",
   ck_essential:"Essential cookies (always on)", ck_analytics:"Analytics (Google Analytics via Tag Manager)", ck_save:"Save choices", ck_all:"Accept all", ck_ess:"Essential only", ck_choose:"Choose", ck_hide:"Hide options",
   f_explore:"Explore", f_contact:"Contact", f_follow:"Follow",
-  f_about:"LIONS is a Lisbon-based agency for talent management, cultural projects and public strategy. We represent actors, documentary filmmakers and creators, and advise institutions, brands and projects on how they are seen and understood.",
+  f_about:"LIONS is a Lisbon-based agency working across three areas: Talent, Culture and Public Strategy. We represent actors, journalists, athletes and creators, and advise institutions, brands and projects on how they are seen and understood.",
   f_copy:"© 2026 LIONS PARTNERS, UNIPESSOAL LDA. All rights reserved.",
   privacy:"Privacy policy", terms:"Legal terms", cookie_settings:"Cookie settings", back_top:"Back to top", developed:"Developed by", developed_aria:"Developed by LOBA (opens in a new tab)",
   gate_note:"Private preview of the new LIONS website. Enter the password to continue.", gate_pw:"Password", gate_show:"Show", gate_hide:"Hide", gate_err:"That password is not correct. Check it and try again.", gate_enter:"Enter",
@@ -889,10 +1150,34 @@ en: {
 pt: {
   skip:"Saltar para o conteúdo", home:"LIONS, página inicial", navMain:"Principal", navMobile:"Navegação", menu:"Menu", closeMenu:"Fechar menu", openSearch:"Pesquisar no site", langGroup:"Idioma",
   nav_talent:"Talent", nav_approach:"Approach", nav_journal:"Journal", nav_cases:"Cases", nav_contact:"Contacto", nav_search:"Pesquisa",
+  nav_culture:"Culture", nav_public:"Public Strategy", social:"Redes sociais",
+  discover:"Descobrir", area_label:"Área",
+  talent_phil:"Representamos um número reduzido de atores, jornalistas, atletas e criadores, e acompanhamo-los a longo prazo. Cada carreira tem um plano, um estratega e uma ideia clara do que deve ser daqui a cinco anos.",
+  roster:"Talentos", roster_intro:"Cada nome nesta página tem um estratega dedicado e uma equipa por trás. É por isso que a lista é curta.",
+  culture_phil:"A cultura é onde as reputações se constroem antes de serem notadas. Ajudamos filmes, festivais, exposições e instituições culturais a chegar ao público que o seu trabalho merece, com uma comunicação que respeita a própria obra.",
+  culture_what:"O que fazemos na cultura",
+  cw_premieres:"Estreias e lançamentos", cw_premieres_d:"Planos de comunicação para filmes, séries e documentários, do primeiro anúncio à estreia.",
+  cw_events:"Eventos e red carpets", cw_events_d:"Estratégia de convidados, imprensa e gestão de imagem em estreias, galas e festivais.",
+  cw_inst:"Instituições culturais", cw_inst_d:"Posicionamento e temporadas para museus, teatros, fundações e festivais.",
+  cw_visits:"Visitas e parcerias", cw_visits_d:"Programas para convidados internacionais e figuras públicas em Portugal, e parcerias entre cultura e marcas.",
+  projects:"Projetos", projects_intro:"Uma seleção de projetos culturais. Cada card abre a página do próprio projeto ou um artigo relacionado.",
+  ext:"Link externo", internal:"Ler mais",
+  public_phil:"Instituições, marcas e projetos são avaliados pela clareza com que se explicam. Construímos posicionamentos públicos coerentes, credíveis e sustentados no tempo, para que o que fazem seja compreendido, e não apenas visto.",
+  public_what:"O que fazemos",
+  ps_pos:"Posicionamento e narrativa", ps_pos_d:"Definir o que uma instituição, marca ou projeto defende, e como o dizer em público.",
+  ps_comm:"Comunicação estratégica", ps_comm_d:"Planos de comunicação, mensagens-chave e calendários alinhados com os objetivos da organização.",
+  ps_voice:"Presença pública e porta-vozes", ps_voice_d:"Preparação de líderes e porta-vozes para entrevistas, painéis e momentos públicos.",
+  ps_rep:"Reputação e stakeholders", ps_rep_d:"Relação com imprensa, parceiros e instituições, e apoio em momentos sensíveis.",
+  public_work:"Trabalhos selecionados",
+  nl_title:"Newsletter", nl_text:"Notícias ocasionais da LIONS: talento, cultura e estratégia pública. Sem ruído.",
+  nl_label:"Email para a newsletter", nl_ph:"O seu email", nl_btn:"Subscrever",
+  nl_note:"Ao subscrever aceita receber emails da LIONS, nos termos da <a href=\"#/privacy\">política de privacidade</a>. Pode cancelar a qualquer momento.",
+  nl_ok:"Obrigado. Confirme a subscrição no email que acabámos de enviar. [Integração com a plataforma de newsletter a configurar.]",
+  promo_kicker:"Destaque", promo_close:"Fechar destaque", promo_title:"[Figura pública] em Lisboa", promo_text:"[Nota curta sobre a visita ou o evento, com data e local. Gerido no back office e mostrado uma vez por visita.]", promo_link:"Saber mais",
   scroll:"Descer",
   manifesto_p:"Trabalhamos com um grupo restrito de talentos, criadores e instituições. Cuidamos da sua imagem, construímos a sua narrativa e posicionamo-los na cultura com intenção.",
   areas_label:"Três áreas",
-  area_talent:"Representação e estratégia de carreira a longo prazo para um grupo restrito de atores, documentaristas e criadores.",
+  area_talent:"Representação e estratégia de carreira a longo prazo para um grupo restrito de atores, jornalistas, atletas e criadores.",
   area_culture:"Filmes, festivais, projetos e instituições culturais: comunicação que respeita a obra e encontra o seu público.",
   area_public:"Comunicação estratégica e posicionamento público para instituições, marcas e projetos.",
   view_all_talent:"Ver todos os talentos",
@@ -904,12 +1189,20 @@ pt: {
   founder_bio:"Empreendedor e fundador da Naughty Boys, agência que liderou durante [13/14 anos – a confirmar] e que se tornou uma referência no mercado português de talento e media. Especializado em posicionamento estratégico, representação e desenvolvimento de relações entre personalidades, marcas e projetos culturais, construiu uma carreira assente na criação de relevância, reputação e impacto.",
   founder_alt:"Retrato de João Belo, fundador da LIONS (imagem provisória)",
   journal_label:"Journal", view_all_articles:"Ver todos os artigos",
-  cases_label:"Cases em destaque", view_all_cases:"Ver todos os cases",
+  cases_label:"Culture", view_all_cases:"Ver todos os projetos",
   cta_title:"Vamos conversar", cta_text:"Para talento, projetos culturais e estratégia pública, escreva-nos. Todas as mensagens são lidas pela equipa.", cta_btn:"Contactar a agência",
-  talent_title:"Talent", talent_intro:"Atores, documentaristas e criadores. Um grupo deliberadamente restrito, para que cada carreira tenha a atenção que merece.",
+  talent_title:"Talent", talent_intro:"Atores, jornalistas, atletas e criadores. Um grupo deliberadamente restrito, para que cada carreira tenha a atenção que merece.",
   all_talent:"Todos os talentos", portrait_of:"Retrato de", portrait_cap:"RETRATO A FORNECER",
   selected_work:"Trabalhos selecionados", online:"Online", online_text:"Canais oficiais. Para contratações e parcerias, contacte a LIONS.",
-  optional:"opcional", other_link:"Outro link", opens_new:"(abre num novo separador)",
+  optional:"opcional", other_link:"Outro link", tiktok_tbc:"[Conta oficial a confirmar]",
+  c07_note:"Um grupo curto é uma escolha: cada nome tem um estratega, uma equipa e um plano.",
+  c05_note:"Do primeiro anúncio à última noite da temporada.",
+  c02_note:"Relações internacionais, conhecimento local e trabalho que deixa marca na cultura.",
+  c03_note:"Três áreas, uma forma de trabalhar: primeiro a estratégia, a visibilidade como consequência.",
+  followers:"seguidores", followers_tbc:"[Seguidores a confirmar]", estimate:"estimativa", visit_profile:"Ver perfil",
+  tp_bio:"Biografia", tp_social:"Redes sociais", tp_high:"Destaque", tp_gallery:"Galeria", gal_cap_tbs:"[Legenda a fornecer]",
+  prev_talent:"Talentos anteriores", next_talent:"Talentos seguintes", slide_of:"de",
+ opens_new:"(abre num novo separador)",
   approach_title:"Approach",
   approach_intro:"Fazemos menos coisas, para menos pessoas, durante mais tempo. Cada talento, projeto e instituição tem um plano, construído em conjunto.",
   areas_title:"Três áreas",
@@ -941,13 +1234,13 @@ pt: {
   search_title:"Pesquisa", search_ph:"Pesquisar talentos, artigos e cases", clear:"Limpar pesquisa",
   s_type:"Escreva uma palavra para pesquisar talentos, artigos e cases.", s_one:"1 resultado para", s_many:"resultados para", s_none:"Sem resultados",
   s_nomatch:"Nada corresponde a “{q}”. Verifique a ortografia, experimente o nome de um talento ou explore as secções abaixo.",
-  type_talent:"Talento", type_case:"Case", type_page:"Página",
+  type_talent:"Talento", type_case:"Culture", type_ps:"Public Strategy", type_page:"Página",
   nf_eyebrow:"Erro 404", nf_title:"Esta página não existe", nf_text:"O link pode estar desatualizado ou o endereço pode ter sido mal escrito. Volte à página inicial ou pesquise o que procurava.", nf_home:"Ir para a página inicial", nf_search:"Pesquisar no site",
   cookie_region:"Consentimento de cookies",
   cookie_text:"Usamos cookies para medir visitas e melhorar o site. Os cookies de análise só são ativados se os aceitar. <a href=\"#/privacy\">Ler a política de privacidade</a>.",
   ck_essential:"Cookies essenciais (sempre ativos)", ck_analytics:"Análise (Google Analytics via Tag Manager)", ck_save:"Guardar escolhas", ck_all:"Aceitar todos", ck_ess:"Só essenciais", ck_choose:"Escolher", ck_hide:"Ocultar opções",
   f_explore:"Explorar", f_contact:"Contacto", f_follow:"Seguir",
-  f_about:"A LIONS é uma agência sediada em Lisboa dedicada à gestão de talento, a projetos culturais e à estratégia pública. Representamos atores, documentaristas e criadores, e aconselhamos instituições, marcas e projetos sobre a forma como são vistos e compreendidos.",
+  f_about:"A LIONS é uma agência sediada em Lisboa que trabalha em três áreas: Talent, Culture e Public Strategy. Representamos atores, jornalistas, atletas e criadores, e aconselhamos instituições, marcas e projetos sobre a forma como são vistos e compreendidos.",
   f_copy:"© 2026 LIONS PARTNERS, UNIPESSOAL LDA. Todos os direitos reservados.",
   privacy:"Política de privacidade", terms:"Termos legais", cookie_settings:"Definições de cookies", back_top:"Voltar ao topo", developed:"Desenvolvido por", developed_aria:"Desenvolvido pela LOBA (abre num novo separador)",
   gate_note:"Pré-visualização privada do novo site da LIONS. Introduza a password para continuar.", gate_pw:"Password", gate_show:"Mostrar", gate_hide:"Ocultar", gate_err:"A password não está correta. Verifique e tente novamente.", gate_enter:"Entrar",
@@ -962,35 +1255,91 @@ const t = k => (T[lang][k] !== undefined ? T[lang][k] : T.en[k]);
 const PH = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 const U = () => PH;
 const PORTRAIT = () => PH;
+const PHOTOS = new Proxy({}, { get: () => PH });
+const GALPH = () => PH;
 const IMG = {
   hero:"1769284010524-177ced162fc4", hallway:"1557226217-bf0da2478e6c", pillars:"1780383454564-0b7f76d12f57",
   darkroom:"1787790175235-e0e2c8dd11df", geometric:"1763850407750-4671769329c1", monolith:"1522743791393-522312deeebf",
   stairs:"1601993957728-1e56ab70c5a8", walkway:"1737442981890-0a87ef3ce9f5", building:"1546414701-81cc6963c67f",
   facade:"1504625709867-b4e45e3bb9dd", tower:"1714765761465-e7a4974fa05b", church:"1762967029850-10ef3f175496",
-  windows:"1632504102536-6e1e1bb00a8e", upward:"1483366774565-c783b9f70e2c", gallery:"1774021795769-375b0a521d90"
+  windows:"1632504102536-6e1e1bb00a8e", upward:"1483366774565-c783b9f70e2c", gallery:"1774021795769-375b0a521d90",
+  marble:"1566305977571-5666677c6e98", marbleWhite:"1566041510394-cf7c8fe21800"
 };
-const AMB = Object.keys(IMG).filter(k => k !== "hero");
+const AMB = Object.keys(IMG).filter(k => k !== "hero" && !k.startsWith("marble"));
 
 /* ================= content (placeholders where facts are not confirmed) ================= */
-const BIO_PH = { en:"[Short biography to be supplied by LIONS and validated by the talent.]", pt:"[Biografia curta a fornecer pela LIONS e validada pelo talento.]" };
+/* Talents — source: LIONS_Talent_Bios_LOBA_Atualizado.docx (PT original; EN translation to be validated).
+   Follower counts are kept out of the site on purpose (no metrics on talent pages). */
+const W = (type, title, meta, extra) => Object.assign({ type, title, meta }, extra || {});
+const T_FIC = P("Fiction","Ficção"), T_TV = P("Television","Televisão"), T_COVER = P("Cover","Capa"), T_CAMP = P("Campaign","Campanha"),
+      T_VID = P("Video","Vídeo"), T_PRESS = P("Press","Imprensa"), T_POD = P("Podcast","Podcast"), T_COLLAB = P("Collaboration","Colaboração");
+const PH_COVER = W(T_COVER, P("[Magazine], [month year]","[Revista], [mês ano]"), P("Magazine cover","Capa de revista"));
+const PH_CAMP = W(T_CAMP, P("[Brand] — [campaign]","[Marca] — [campanha]"), P("See the campaign","Ver a campanha"));
+const PH_VID = W(T_VID, P("[Video title]","[Título do vídeo]"), P("Watch on [platform]","Ver em [plataforma]"), { video:true });
+const PH_PRESS = W(T_PRESS, P("[Publication]: [article]","[Publicação]: [artigo]"), P("Read the article","Ler o artigo"));
+const PH_POD = W(T_POD, P("[Podcast] — [episode]","[Podcast] — [episódio]"), P("Listen to the episode","Ouvir o episódio"));
+const TBC = P("[to be confirmed]","[a confirmar]");
 const TALENTS = [
-  { slug:"daniela-ruah", name:"Daniela Ruah", area:{ en:"Actress", pt:"Atriz" } },
-  { slug:"maria-joao-bastos", name:"Maria João Bastos", area:{ en:"Actress", pt:"Atriz" } },
-  { slug:"mariana-van-zeller", name:"Mariana Van Zeller", area:{ en:"Documentary filmmaker", pt:"Documentarista" } },
-  { slug:"margarida-vilanova", name:"Margarida Vilanova", area:{ en:"[Area to be confirmed]", pt:"[Área a confirmar]" } },
-  { slug:"a-confirmar", name:{ en:"[To be confirmed]", pt:"[A confirmar]" }, area:{ en:"Content creator", pt:"Criadora de conteúdo" } }
-];
-const WORK_TYPES = [
-  { type:{en:"Cover",pt:"Capa"}, title:{en:"[Magazine], [month year]",pt:"[Revista], [mês ano]"}, meta:{en:"Magazine cover",pt:"Capa de revista"} },
-  { type:{en:"Campaign",pt:"Campanha"}, title:{en:"[Brand] — [campaign]",pt:"[Marca] — [campanha]"}, meta:{en:"See the campaign",pt:"Ver a campanha"} },
-  { type:{en:"Video",pt:"Vídeo"}, title:{en:"[Video title]",pt:"[Título do vídeo]"}, meta:{en:"Watch on [platform]",pt:"Ver em [plataforma]"}, video:true },
-  { type:{en:"Podcast",pt:"Podcast"}, title:{en:"[Podcast] — [episode]",pt:"[Podcast] — [episódio]"}, meta:{en:"Listen to the episode",pt:"Ouvir o episódio"} },
-  { type:{en:"Press",pt:"Imprensa"}, title:{en:"[Publication]: [article]",pt:"[Publicação]: [artigo]"}, meta:{en:"Read the article",pt:"Ler o artigo"} },
-  { type:{en:"Campaign",pt:"Campanha"}, title:{en:"[Brand] — [campaign]",pt:"[Marca] — [campanha]"}, meta:{en:"See the campaign",pt:"Ver a campanha"} }
+  { slug:"margarida-vila-nova",
+    igFollowers:null, hero:"split", tone:"night", galLayout:"mosaic",
+    highlight:{ kind:"image", img:"church", href:"https://www.example.com/", type:P("Project","Projeto"), title:P("Avenida Portugal — as Carminha","Avenida Portugal — no papel de Carminha"), text:P("[Editorial note on the 2026 series and the role — to be supplied by LIONS.]","[Nota editorial sobre a série de 2026 e a personagem — a fornecer pela LIONS.]") },
+    gallery:["cover","editorial","campaign","editorial","moment","cover"], name:"Margarida Vila-Nova", photo:true, featured:true,
+    area:P("Actress · Director","Atriz · Realizadora"), instagram:"margarida_vila_nova_",
+    bio:P("Margarida Vila-Nova has built a singular career across television, film and theatre. Recognised for the intensity and versatility of her performances, she has been part of projects such as Cartas da Guerra, Hotel Império, Matilha and Irreversível. An award-winning actress, she has also been exploring directing. In 2026 she is preparing to play Carminha in Avenida Portugal, one of the major bets of Portuguese fiction.",
+          "Margarida Vila-Nova construiu um percurso singular entre a televisão, o cinema e o teatro. Reconhecida pela intensidade e versatilidade das suas interpretações, integrou projetos como Cartas da Guerra, Hotel Império, Matilha e Irreversível. Premiada pelo seu trabalho como atriz, tem também explorado a realização. Em 2026, prepara-se para interpretar Carminha em Avenida Portugal, uma das grandes apostas da ficção nacional."),
+    works:[ W(T_FIC, P("Avenida Portugal","Avenida Portugal"), P("2026 · as Carminha","2026 · no papel de Carminha")),
+            W(T_FIC, P("Cartas da Guerra","Cartas da Guerra"), TBC), W(T_FIC, P("Hotel Império","Hotel Império"), TBC),
+            W(T_FIC, P("Matilha","Matilha"), TBC), W(T_FIC, P("Irreversível","Irreversível"), TBC), PH_COVER ] },
+  { slug:"daniela-ruah",
+    igFollowers:1160000, hero:"split", tone:"", galLayout:"columns",
+    highlight:{ kind:"video", img:"hallway", type:P("Interview","Entrevista"), title:P("[Interview title]","[Título da entrevista]"), text:P("[Editorial note on the interview — to be supplied by LIONS.]","[Nota editorial sobre a entrevista — a fornecer pela LIONS.]") },
+    gallery:["cover","campaign","editorial","cover","moment","editorial","campaign"], name:"Daniela Ruah", photo:true, featured:true,
+    area:P("Actress · Director · Host","Atriz · Realizadora · Apresentadora"), instagram:"danielaruah",
+    bio:P("With a career built between Portugal and the United States, Daniela Ruah gained international recognition as one of the leads of NCIS: Los Angeles. An actress, director and host, she brings together experience in major television productions with entertainment and film projects. Her path combines international reach, artistic versatility and a close connection with the Portuguese public.",
+          "Com uma carreira construída entre Portugal e os Estados Unidos, Daniela Ruah ganhou projeção internacional como protagonista de NCIS: Los Angeles. Atriz, realizadora e apresentadora, cruza a experiência em grandes produções televisivas com projetos de entretenimento e cinema. A sua trajetória combina dimensão internacional, versatilidade artística e uma ligação próxima ao público português."),
+    works:[ W(T_TV, P("NCIS: Los Angeles","NCIS: Los Angeles"), P("Lead cast","Protagonista")),
+            W(P("Directing","Realização"), P("[Title]","[Título]"), TBC), W(P("Hosting","Apresentação"), P("[Programme]","[Programa]"), TBC),
+            PH_COVER, PH_CAMP, PH_VID ] },
+  { slug:"caetana-botelho-afonso",
+    igFollowers:767000, igEstimate:true, hero:"full", tone:"light", galLayout:"columns",
+    highlight:{ kind:"image", img:"facade", href:"https://www.example.com/", type:P("Campaign","Campanha"), title:P("[Brand] — [campaign]","[Marca] — [campanha]"), text:P("[Editorial note on the campaign — to be supplied by LIONS.]","[Nota editorial sobre a campanha — a fornecer pela LIONS.]") },
+    gallery:["campaign","editorial","cover","campaign","editorial"], name:"Caetana Botelho Afonso", photo:true,
+    area:P("Content creator · Fashion · Lifestyle","Criadora de conteúdos · Moda · Lifestyle"), instagram:"caetanaba",
+    bio:P("Caetana Botelho Afonso stands out as one of the Portuguese voices of a new generation in digital fashion. Her visual universe is defined by an intuitive combination of colour, texture and personal references, with a spontaneous, recognisable aesthetic. With reach beyond Portugal, she develops content and collaborations that bring fashion, creativity and lifestyle closer to an international community.",
+          "Caetana Botelho Afonso afirma-se como uma das vozes portuguesas da nova geração na moda digital. O seu universo visual distingue-se pela combinação intuitiva de cor, textura e referências pessoais, com uma estética espontânea e reconhecível. Com projeção para além de Portugal, desenvolve conteúdos e colaborações que aproximam moda, criatividade e lifestyle de uma comunidade internacional."),
+    works:[ PH_CAMP, W(T_COLLAB, P("[Brand] × Caetana Botelho Afonso","[Marca] × Caetana Botelho Afonso"), TBC), PH_COVER, PH_VID, PH_PRESS, PH_CAMP ] },
+  { slug:"patricia-sampaio",
+    igFollowers:null, hero:"split", tone:"", galLayout:"duo",
+    highlight:{ kind:"image", img:"monolith", href:"https://www.example.com/", type:P("Moment","Momento"), title:P("Paris 2024 — Olympic bronze","Paris 2024 — bronze olímpico"), text:P("[Editorial note — to be supplied by LIONS.]","[Nota editorial — a fornecer pela LIONS.]") },
+    gallery:["moment","editorial","campaign","moment"], name:"Patrícia Sampaio", photo:false,
+    area:P("Olympic athlete · Judo","Atleta olímpica · Judo"), instagram:"sampaiolovesjudo",
+    bio:P("Patrícia Sampaio is one of the leading names in Portuguese judo. Bronze medallist at the Paris 2024 Olympic Games, she became European champion in 2025 and also won world bronze that year, in the -78 kg category. Her path in high-performance sport reflects ambition, discipline and consistency, on and off the tatami.",
+          "Patrícia Sampaio é uma das principais referências do judo português. Medalha de bronze nos Jogos Olímpicos de Paris 2024, sagrou-se campeã europeia em 2025 e conquistou também bronze mundial nesse ano, na categoria de -78 kg. O seu percurso no alto rendimento traduz ambição, disciplina e consistência, dentro e fora do tatami."),
+    works:[ W(P("Olympic Games","Jogos Olímpicos"), P("Paris 2024","Paris 2024"), P("Bronze medal","Medalha de bronze")),
+            W(P("European Championships","Campeonato da Europa"), P("2025","2025"), P("European champion","Campeã europeia")),
+            W(P("World Championships","Campeonato do Mundo"), P("2025","2025"), P("Bronze medal · -78 kg","Medalha de bronze · -78 kg")) ] },
+  { slug:"maria-joao-bastos",
+    igFollowers:277000, hero:"split rev", tone:"light", galLayout:"mosaic",
+    highlight:{ kind:"video", img:"pillars", type:P("Project","Projeto"), title:P("Rabo de Peixe","Rabo de Peixe"), text:P("[Editorial note on the production — to be supplied by LIONS.]","[Nota editorial sobre a produção — a fornecer pela LIONS.]") },
+    gallery:["editorial","cover","campaign","editorial","moment","cover"], name:"Maria João Bastos", photo:true, featured:true,
+    area:P("Actress · Film · Television","Atriz · Cinema · Televisão"), instagram:"mariajoao.bastos",
+    bio:P("With a career spanning Portugal and Brazil, Maria João Bastos is a striking presence in film and television. She has appeared in productions such as Mistérios de Lisboa, Linhas de Wellington, O Mecanismo and Rabo de Peixe, working with directors and crews from different geographies. Her path stands out for its range and for an artistic identity recognised beyond borders.",
+          "Com uma carreira que atravessa Portugal e o Brasil, Maria João Bastos é uma presença marcante no cinema e na televisão. Participou em produções como Mistérios de Lisboa, Linhas de Wellington, O Mecanismo e Rabo de Peixe, trabalhando com realizadores e equipas de diferentes geografias. O seu percurso distingue-se pela amplitude de registos e por uma identidade artística reconhecida além-fronteiras."),
+    works:[ W(T_FIC, P("Mistérios de Lisboa","Mistérios de Lisboa"), TBC), W(T_FIC, P("Linhas de Wellington","Linhas de Wellington"), TBC),
+            W(T_FIC, P("O Mecanismo","O Mecanismo"), TBC), W(T_FIC, P("Rabo de Peixe","Rabo de Peixe"), TBC), PH_COVER, PH_CAMP ] },
+  { slug:"mariana-van-zeller",
+    igFollowers:null, hero:"full", tone:"night", galLayout:"duo",
+    highlight:{ kind:"video", img:"building", type:P("Series · National Geographic","Série · National Geographic"), title:P("Trafficked","Na Rota do Tráfico (Trafficked)"), text:P("[Editorial note on the series — to be supplied by LIONS.]","[Nota editorial sobre a série — a fornecer pela LIONS.]") },
+    gallery:["editorial","moment","cover","editorial"], name:"Mariana van Zeller", photo:true, featured:true,
+    area:P("Investigative journalist · Host · Executive producer","Jornalista de investigação · Apresentadora · Produtora executiva"), instagram:"marianavz",
+    bio:P("Mariana van Zeller is a Portuguese journalist with an international profile, recognised for her investigative work in some of the most complex contexts in the world. Host and executive producer of National Geographic’s Trafficked (Na Rota do Tráfico), she stands out for close-up, rigorous and courageous journalism. Her work has been recognised with multiple Emmy, Peabody and duPont awards.",
+          "Mariana van Zeller é uma jornalista portuguesa de projeção internacional, reconhecida pelo trabalho de investigação em alguns dos contextos mais complexos do mundo. Apresentadora e produtora executiva de Na Rota do Tráfico (Trafficked), da National Geographic, distingue-se por um jornalismo de proximidade, rigor e coragem. O seu percurso foi reconhecido com múltiplos prémios Emmy, Peabody e duPont."),
+    works:[ W(P("Series · National Geographic","Série · National Geographic"), P("Trafficked","Na Rota do Tráfico (Trafficked)"), P("Host and executive producer","Apresentadora e produtora executiva")),
+            W(P("Recognition","Reconhecimento"), P("Emmy · Peabody · duPont","Emmy · Peabody · duPont"), P("Multiple awards","Vários prémios")),
+            PH_PRESS ] }
 ];
 const tBySlug = s => TALENTS.find(x => x.slug === s);
 
-const P = (en, pt) => ({ en, pt });
 const JOURNAL = [
   { slug:"the-new-language-of-reputation", type:"opinion", date:"2026-05-20", img:"hallway", by:"João Belo", lead:true,
     title:P("The new language of reputation","A nova linguagem da reputação"),
@@ -1014,8 +1363,8 @@ const JOURNAL = [
     intro:P("[Short note on the talent’s presence at the festival: screening, jury, premiere or talk.]","[Nota curta sobre a presença do talento no festival: sessão, júri, estreia ou conversa.]"),
     body:[P("[Highlight text to be supplied by LIONS. It can be republished from Instagram or TikTok, with the original post linked below.]","[Texto do destaque a fornecer pela LIONS. Pode ser republicado do Instagram ou do TikTok, com a publicação original em link abaixo.]")],
     link:true, gallery:["church","darkroom","hallway"] },
-  { slug:"represent-less-build-more", type:"opinion", date:"2026-04-28", img:"monolith", by:"João Belo",
-    title:P("Represent less, build more","Represent less, build more"), titleEn:true,
+  { slug:"we-represent-better", type:"opinion", date:"2026-04-28", img:"monolith", by:"João Belo",
+    title:P("LIONS doesn’t represent more. We represent better.","LIONS doesn’t represent more. We represent better."), titleEn:true,
     intro:P("Why a small roster is not a limitation, but the whole point.","Porque é que um grupo restrito de talentos não é uma limitação, mas o objetivo."),
     body:[P("Every new name on a roster divides the attention given to the others. We prefer to grow careers rather than lists.","Cada novo nome numa agência divide a atenção dada aos restantes. Preferimos fazer crescer carreiras em vez de listas."),
           P("[Opinion text by João Belo to be supplied.]","[Texto de opinião de João Belo a fornecer.]")] },
@@ -1059,6 +1408,36 @@ const JOURNAL = [
     body:[P("Museums, festivals and foundations compete for the same attention as brands, with fewer resources and higher expectations.","Museus, festivais e fundações disputam a mesma atenção que as marcas, com menos recursos e expectativas mais altas."),
           P("[Text to be supplied.]","[Texto a fornecer.]")] }
 ];
+/* Culture projects: separate database from talents (no cross-references). Cards link out, or to an internal page if preferred. */
+const CULTURE = [
+  { img:"church", date:null, type:P("Film premiere & launch","Estreia e lançamento de filme"),
+    title:P("Santo António","Santo António"), text:P("Communication of the premiere and release of the film “Santo António”. Internal link to the case.","Comunicação da estreia e do lançamento do filme “Santo António”. Link interno para o case."),
+    href:"#/cases/santo-antonio-film-premiere-and-launch", external:false },
+  { img:"gallery", date:"2026-05-01", type:P("Red carpet","Red carpet"),
+    title:P("[Festival] — opening night","[Festival] — noite de abertura"), text:P("[Guest strategy and press for the festival’s opening red carpet.]","[Estratégia de convidados e imprensa para o red carpet de abertura do festival.]"),
+    href:"https://www.example.com/", external:true },
+  { img:"facade", date:"2026-04-01", type:P("Exhibition","Exposição"),
+    title:P("[Exhibition] — opening","[Exposição] — inauguração"), text:P("[Launch communication for a new exhibition.] Internal link example.","[Comunicação de lançamento de uma nova exposição.] Exemplo de link interno."),
+    href:"#/journal/cultural-project-behind-the-scenes", external:false },
+  { img:"stairs", date:"2026-03-01", type:P("Visit","Visita"),
+    title:P("[Public figure] in Portugal","[Figura pública] em Portugal"), text:P("[Programme and press for the visit of an international guest.]","[Programa e imprensa para a visita de um convidado internacional.]"),
+    href:"https://www.example.com/", external:true },
+  { img:"tower", date:"2026-01-01", type:P("Institution","Instituição"),
+    title:P("[Cultural institution] — new season","[Instituição cultural] — nova temporada"), text:P("[Positioning and communication of a new programming season.]","[Posicionamento e comunicação de uma nova temporada de programação.]"),
+    href:"https://www.example.com/", external:true },
+  { img:"darkroom", date:"2025-11-01", type:P("Event","Evento"),
+    title:P("[Gala / event] — [city]","[Gala / evento] — [cidade]"), text:P("[Image and press management for a cultural gala.] Internal link example.","[Gestão de imagem e imprensa para uma gala cultural.] Exemplo de link interno."),
+    href:"#/journal/cultural-project-premiere-notes", external:false }
+];
+const PUBLIC = [
+  { img:"building", type:P("Institution","Instituição"), title:P("[Institution] — repositioning","[Instituição] — reposicionamento"),
+    text:P("[Public positioning and strategic communication for a new cycle.]","[Posicionamento público e comunicação estratégica para um novo ciclo.]"), href:"https://www.example.com/", external:true },
+  { img:"geometric", type:P("Brand","Marca"), title:P("[Brand] — public narrative","[Marca] — narrativa pública"),
+    text:P("[Narrative and spokesperson preparation for a brand’s public moment.]","[Narrativa e preparação de porta-vozes para um momento público da marca.]"), href:"https://www.example.com/", external:true },
+  { img:"monolith", type:P("Project","Projeto"), title:P("[Project] — launch","[Projeto] — lançamento"),
+    text:P("[Stakeholder map and launch communication for a public-interest project.] Internal link example.","[Mapa de stakeholders e comunicação de lançamento de um projeto de interesse público.] Exemplo de link interno."), href:"#/journal/public-strategy-for-cultural-institutions", external:false }
+];
+const POPUP = { enabled:true, img:"stairs", href:"https://www.example.com/", external:true };
 const CASES = [
   { slug:"santo-antonio-film-premiere-and-launch", img:"church", date:null,
     label:P("Film premiere & launch","Estreia e lançamento de filme"),
@@ -1111,11 +1490,11 @@ const LEGAL = {
 
 /* ================= helpers ================= */
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const srcOf = (k, w) => k.startsWith("portrait:") ? PORTRAIT(k.slice(9)) : U(IMG[k], w);
-const toneOf = k => k.startsWith("portrait:") ? "tone-portrait" : "tone";
+const srcOf = (k, w) => k.startsWith("gal:") ? GALPH(k.split(":")[1], +k.split(":")[2]) : k.startsWith("photo:") ? PHOTOS[k.slice(6)] : k.startsWith("portrait:") ? PORTRAIT(k.slice(9)) : U(IMG[k], w);
+const toneOf = k => (k.startsWith("portrait:") || k.startsWith("photo:")) ? "tone-portrait" : k.startsWith("gal:") ? "tone-gal" : "tone";
 const img = (k, cls, alt, w, extra) => `<img src="${srcOf(k, w)}" alt="${esc(alt || "")}" class="${toneOf(k)} ${cls || ""}" loading="lazy" decoding="async" ${extra || ""}>`;
 const tName = x => L(x.name);
-const tImg = x => "portrait:" + tName(x);
+const tImg = x => x.photo ? "photo:" + x.slug : "portrait:" + tName(x);
 const fmtDate = (iso, monthOnly) => {
   if (!iso) return lang === "pt" ? "[Data a confirmar]" : "[Date to be confirmed]";
   const d = new Date(iso + "T12:00:00");
@@ -1136,6 +1515,11 @@ const journalCard = a => `<li><a class="card" href="#/journal/${a.slug}">
   <span class="ph">${img(a.img, "r-1610", "", 1000)}</span>
   <span class="kicker">${esc(catOf(a))}</span><span class="c-title">${titleOf(a)}</span>
   <span class="c-sum">${esc(L(a.intro))}</span><span class="meta">${esc(fmtDate(a.date))}</span></a></li>`;
+const projCard = c => `<li><a class="card" href="${c.href}" ${c.external ? 'target="_blank" rel="noopener"' : ""}>
+  <span class="ph">${img(c.img, "r-32", "", 1200)}</span>
+  <span style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px"><span class="kicker">${esc(L(c.type))}</span>${c.date !== undefined ? `<span class="meta">${esc(fmtDate(c.date, true))}</span>` : ""}</span>
+  <span class="c-title">${esc(L(c.title))}</span><span class="c-sum">${esc(L(c.text))}</span>
+  <span class="go">${c.external ? t("ext") + ' <span aria-hidden="true">↗</span>' + newTab() : t("internal") + ' <span aria-hidden="true">→</span>'}</span></a></li>`;
 const caseCard = c => `<li><a class="card" href="#/cases/${c.slug}">
   <span class="ph">${img(c.img, "r-32", "", 1400)}</span>
   <span style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px"><span class="kicker">${esc(L(c.label))}</span><span class="meta">${esc(fmtDate(c.date, true))}</span></span>
@@ -1149,11 +1533,11 @@ const founderBlock = () => `<section class="founder" aria-labelledby="founder-t"
   <div><p class="name">João Belo</p><p class="role">${t("founder_role")}</p></div><span class="hr"></span>
   <p class="bio">${esc(t("founder_bio"))}</p></div></div></section>`;
 const areasBlock = (titleKey, headingTag) => `<section aria-labelledby="areas-t" style="border-bottom:1px solid var(--rule)"><div class="wrap sec">
-  <div class="sec-head"><${headingTag} id="areas-t" class="label">${t(titleKey)}</${headingTag}><span class="meta" lang="en">${CLAIM}</span></div>
+  <div class="sec-head"><${headingTag} id="areas-t" class="label">${t(titleKey)}</${headingTag}><span class="meta" lang="en">${M.c02}</span></div>
   <div class="areas">
-    <div><h3 lang="en">Talent</h3><p>${t("area_talent")}</p></div>
-    <div><h3 lang="en">Culture</h3><p>${t("area_culture")}</p></div>
-    <div><h3 lang="en">Public Strategy</h3><p>${t("area_public")}</p></div>
+    <div><h3 lang="en">Talent</h3><p>${t("area_talent")}</p><a class="more" href="#/talent">${t("discover")} <span class="sr-only">Talent</span> ${arrowR}</a></div>
+    <div><h3 lang="en">Culture</h3><p>${t("area_culture")}</p><a class="more" href="#/culture">${t("discover")} <span class="sr-only">Culture</span> ${arrowR}</a></div>
+    <div><h3 lang="en">Public Strategy</h3><p>${t("area_public")}</p><a class="more" href="#/public-strategy">${t("discover")} <span class="sr-only">Public Strategy</span> ${arrowR}</a></div>
   </div></div></section>`;
 
 /* ================= views ================= */
@@ -1168,13 +1552,16 @@ V.home = () => {
   <a class="scroll" href="#manifesto" data-scroll>${t("scroll")}<i></i></a>
 </section>
 <section id="manifesto" class="light manifesto">
-  <h2 lang="en">${M.vision}</h2><span class="rule" aria-hidden="true"></span>
+  <h2 lang="en">We represent culture,<br>we build impact.</h2><span class="rule" aria-hidden="true"></span>
   <p>${t("manifesto_p")}</p>
 </section>
 ${areasBlock("areas_label", "h2")}
 <section aria-labelledby="h-talent"><div class="wrap sec">
-  <div class="sec-head"><h2 id="h-talent" class="label" lang="en">Talent</h2><a class="link-caps" href="#/talent">${t("view_all_talent")} ${arrowR}</a></div>
-  <ul class="grid g-talent">${TALENTS.slice(0, 4).map(talentCard).join("")}</ul>
+  <div class="sec-head"><h2 id="h-talent" class="label" lang="en">Talent</h2>
+    <div class="car-ctl"><button type="button" class="car-btn" data-car="-1" aria-controls="tal-track" aria-label="${t("prev_talent")}">${arrowL}</button><button type="button" class="car-btn" data-car="1" aria-controls="tal-track" aria-label="${t("next_talent")}">${arrowR}</button><a class="link-caps" href="#/talent">${t("view_all_talent")} ${arrowR}</a></div></div>
+  <div class="carousel" role="region" aria-roledescription="carousel" aria-labelledby="h-talent">
+    <ul class="car-track" id="tal-track">${(() => { const ph = TALENTS.filter(x => x.photo); return ph.map((x, i) => talentCard(x).replace("<li>", `<li aria-roledescription="slide" aria-label="${i + 1} ${t("slide_of")} ${ph.length}">`)).join(""); })()}</ul>
+  </div>
 </div></section>
 ${img("pillars", "", "", 2400, 'style="width:100%;height:clamp(240px,34vw,520px);object-fit:cover"')}
 <section class="light" aria-labelledby="h-approach"><div class="wrap sec split">
@@ -1201,56 +1588,120 @@ ${founderBlock()}
   </div>
 </div></section>
 <section aria-labelledby="h-cases" style="border-top:1px solid var(--rule)"><div class="wrap sec">
-  <div class="sec-head"><h2 id="h-cases" class="label">${t("cases_label")}</h2><a class="link-caps" href="#/cases">${t("view_all_cases")} ${arrowR}</a></div>
-  <ul class="grid g-2">${CASES.slice(0, 2).map(caseCard).join("")}</ul>
+  <div class="sec-head"><h2 id="h-cases" class="label" lang="en">Culture</h2><a class="link-caps" href="#/culture">${t("view_all_cases")} ${arrowR}</a></div>
+  <ul class="grid g-3 trio">${CULTURE.slice(0, 3).map(projCard).join("")}</ul>
 </div></section>
 ${cta(t("cta_title"), t("cta_text"), "light")}`;
 };
 
-V.talent = () => pageHead("Talent", t("talent_intro")) +
-  `<div class="wrap" style="padding-bottom:clamp(88px,10vw,144px)"><ul class="grid g-talent5">${TALENTS.map(talentCard).join("")}</ul></div>`;
+const areaHero = (name, imgKey, slogan, phil) => `<section class="hero area-hero" aria-labelledby="area-h1">
+  <img src="${U(IMG[imgKey], 2400)}" alt="" class="tone" fetchpriority="high">
+  <div class="inner">
+    <p class="eyebrow">${t("area_label")}</p>
+    <h1 id="area-h1" lang="en" data-focus>${name}</h1>
+    <p class="slogan" lang="en">${slogan}</p>
+    <p class="phil">${phil}</p>
+  </div>
+</section>`;
+
+V.talent = () => areaHero("Talent", "pillars", M.c04, t("talent_phil")) + `
+<section aria-labelledby="roster-t"><div class="wrap sec">
+  <div class="sec-head"><h2 id="roster-t" class="label">${t("roster")}</h2><p class="meta" style="margin:0;max-width:34em;letter-spacing:0;font-size:15px">${t("roster_intro")}</p></div>
+  <ul class="grid g-3">${TALENTS.map(talentCard).join("")}</ul>
+</div></section>
+${moment(M.c07, t("c07_note"))}
+${cta(t("cta_title"), t("cta_text"))}`;
+
+V.culture = () => areaHero("Culture", "gallery", M.c03, t("culture_phil")) + `
+<section aria-labelledby="cw-t"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
+  <h2 id="cw-t" class="label" style="flex:1 1 240px">${t("culture_what")}</h2>
+  <dl class="svc" style="flex:3 1 560px">
+    <div><dt>${t("cw_premieres")}</dt><dd>${t("cw_premieres_d")}</dd></div>
+    <div><dt>${t("cw_events")}</dt><dd>${t("cw_events_d")}</dd></div>
+    <div><dt>${t("cw_inst")}</dt><dd>${t("cw_inst_d")}</dd></div>
+    <div><dt>${t("cw_visits")}</dt><dd>${t("cw_visits_d")}</dd></div>
+  </dl>
+</div></section>
+${moment(M.c05, t("c05_note"))}
+<section aria-labelledby="pj-t"><div class="wrap sec">
+  <div class="sec-head"><h2 id="pj-t" class="label">${t("projects")}</h2><p class="meta" style="margin:0;max-width:34em;letter-spacing:0;font-size:15px">${t("projects_intro")}</p></div>
+  <ul class="grid g-3">${CULTURE.map(projCard).join("")}</ul>
+</div></section>
+${cta(t("cta_title"), t("cta_text"), "light")}`;
+
+V.publicStrategy = () => areaHero("Public Strategy", "marble", M.c06, t("public_phil")) + `
+<section aria-labelledby="pw-t"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
+  <h2 id="pw-t" class="label" style="flex:1 1 240px">${t("public_what")}</h2>
+  <dl class="svc" style="flex:3 1 560px">
+    <div><dt>${t("ps_pos")}</dt><dd>${t("ps_pos_d")}</dd></div>
+    <div><dt>${t("ps_comm")}</dt><dd>${t("ps_comm_d")}</dd></div>
+    <div><dt>${t("ps_voice")}</dt><dd>${t("ps_voice_d")}</dd></div>
+    <div><dt>${t("ps_rep")}</dt><dd>${t("ps_rep_d")}</dd></div>
+  </dl>
+</div></section>
+${moment(M.c02, t("c02_note"))}
+<section aria-labelledby="psw-t"><div class="wrap sec">
+  <div class="sec-head"><h2 id="psw-t" class="label">${t("public_work")}</h2></div>
+  <ul class="grid g-3 trio">${PUBLIC.map(projCard).join("")}</ul>
+</div></section>
+${cta(t("cta_title"), t("cta_text"))}`;
+
+const IG_ICON = `<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>`;
+const TT_ICON = `<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg>`;
+const fmtFollowers = (n, est) => n == null ? t("followers_tbc")
+  : "≈ " + new Intl.NumberFormat(lang === "pt" ? "pt-PT" : "en-GB", { notation:"compact", maximumFractionDigits:2 }).format(n) + " " + t("followers") + (est ? " · " + t("estimate") : "");
+const GAL_TYPE = { cover:P("Magazine cover","Capa de revista"), campaign:P("Campaign","Campanha"), editorial:P("Editorial","Editorial"), moment:P("Moment","Momento") };
+const GAL_AR = ["4/5","3/4","1/1","4/5","16/11","3/4","4/5"];
 
 V.talentDetail = slug => {
   const x = tBySlug(slug); if (!x) return null;
-  const off = TALENTS.indexOf(x) * 2;
-  const works = WORK_TYPES.map((w, i) => {
-    const k = AMB[(i + off) % AMB.length];
-    const href = w.video ? "https://www.youtube.com/" : "https://www.example.com/";
-    return `<li><a class="card" href="${href}" target="_blank" rel="noopener">
-      <span class="ph" style="position:relative">${img(k, "r-43", "", 1000)}${w.video ? `<span class="play">${playIcon(14)}</span>` : ""}</span>
-      <span class="kicker">${esc(L(w.type))}</span><span class="c-title">${esc(L(w.title))}</span>
-      <span class="meta" style="letter-spacing:0">${esc(L(w.meta))} <span aria-hidden="true">↗</span>${newTab()}</span></a></li>`;
-  }).join("");
-  return backLink("#/talent", t("all_talent")) + `
-  <section class="wrap td-hero">
-    ${img(tImg(x), "", t("portrait_of") + " " + tName(x), 1400, 'loading="eager"')}
-    <div class="txt">
-      <p class="label" style="color:var(--dust)">${esc(L(x.area))}</p>
-      <h1 data-focus>${esc(tName(x))}</h1>
-      <p class="bio">${esc(L(BIO_PH))}</p>
-    </div>
-  </section>
-  <section class="light" aria-labelledby="online-t"><div class="wrap sec split" style="justify-content:space-between;align-items:flex-start">
-    <div style="flex:1 1 300px;max-width:460px;display:flex;flex-direction:column;gap:18px">
-      <h2 id="online-t" class="label">${t("online")}</h2>
-      <p style="margin:0;font-size:17px;line-height:1.75;color:var(--clay-text)">${t("online_text")}</p>
-    </div>
-    <ul class="links-list" style="flex:1 1 400px">
-      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram <span>@[handle]${newTab()}</span></a></li>
-      <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok <span>@[handle]${newTab()}</span></a></li>
-      <li><a href="https://www.example.com/" target="_blank" rel="noopener">${t("other_link")} <span>[${t("optional")}]${newTab()}</span></a></li>
-    </ul>
-  </div></section>
-  <section aria-labelledby="sw"><div class="wrap sec">
-    <h2 id="sw" class="label" style="margin-bottom:44px">${t("selected_work")}</h2>
-    <ul class="grid g-3">${works}</ul>
-  </div></section>`;
+  const name = tName(x), bio = L(x.bio);
+  const cut = bio.indexOf(". ");
+  const lead = cut > 0 ? bio.slice(0, cut + 1) : bio, rest = cut > 0 ? bio.slice(cut + 2) : "";
+  const heroImg = img(tImg(x), "", t("portrait_of") + " " + name, 1600, 'loading="eager" fetchpriority="high"');
+  const heroTxt = `<p class="area">${esc(L(x.area))}</p><h1 data-focus>${esc(name)}</h1>`;
+  const hero = x.hero === "full"
+    ? `<section class="t-hero full" aria-label="${esc(name)}">${heroImg}<div class="inner">${heroTxt}</div></section>`
+    : `<section class="t-hero split ${x.hero.includes("rev") ? "rev" : ""}" aria-label="${esc(name)}"><div class="inner"><div class="media">${heroImg}</div><div class="txt">${heroTxt}</div></div></section>`;
+  const h = x.highlight;
+  const hMedia = h.kind === "video"
+    ? `<button type="button" class="video" data-video="${esc(L(h.title))}" data-poster="${h.img}" aria-haspopup="dialog">${img(h.img, "", "", 1600)}<span class="play big">${playIcon(18)}</span><span class="cap">${t("play_video")}</span></button>`
+    : `<a href="${h.href}" target="_blank" rel="noopener" class="media-link">${img(h.img, "", "", 1600)}<span class="sr-only">${esc(L(h.title))} ${t("opens_new")}</span></a>`;
+  const gal = x.gallery.map((k, i) => `<li><figure>
+      ${img("gal:" + k + ":" + i, "", L(GAL_TYPE[k]) + " — " + name, 900, x.galLayout === "columns" ? `style="aspect-ratio:${GAL_AR[i % GAL_AR.length]}"` : "")}
+      <figcaption><span class="kicker">${esc(L(GAL_TYPE[k]))}</span> ${t("gal_cap_tbs")}</figcaption></figure></li>`).join("");
+  const tone = x.tone === "light" ? "light" : x.tone === "night" ? "t-night" : "";
+  return `<div class="t-profile">${hero}
+  <div class="t-body ${tone}">
+    <div class="wrap" style="padding-top:24px"><a class="link-caps back" href="#/talent">${arrowL}${t("all_talent")}</a></div>
+    <section class="wrap sec t-bio" aria-labelledby="bio-t">
+      <h2 id="bio-t" class="label">${t("tp_bio")}</h2>
+      <div><p class="lead">${esc(lead)}</p>${rest ? `<p class="rest">${esc(rest)}</p>` : ""}</div>
+    </section>
+    <section class="wrap t-soc" aria-labelledby="soc-t">
+      <h2 id="soc-t" class="label">${t("tp_social")}</h2>
+      <ul class="t-social">
+        <li><a href="https://www.instagram.com/${x.instagram}/" target="_blank" rel="noopener"><span class="ico">${IG_ICON}</span><span class="tx"><span class="nw">Instagram</span><span class="h">@${esc(x.instagram)}</span><span class="n">${esc(fmtFollowers(x.igFollowers, x.igEstimate))}</span></span><span class="go" aria-hidden="true">↗</span>${newTab()}</a></li>
+        <li><div><span class="ico">${TT_ICON}</span><span class="tx"><span class="nw">TikTok</span><span class="h">${t("tiktok_tbc")}</span><span class="n">${t("followers_tbc")}</span></span></div></li>
+      </ul>
+    </section>
+    <section class="wrap sec t-high-wrap" aria-labelledby="high-t">
+      <h2 id="high-t" class="label" style="margin-bottom:32px">${t("tp_high")}</h2>
+      <div class="t-high"><div class="media">${hMedia}</div>
+        <div class="txt"><p class="kicker" style="margin:0">${esc(L(h.type))}</p><h3>${esc(L(h.title))}</h3><p>${esc(L(h.text))}</p>
+        ${h.kind === "video" ? "" : `<a class="link-caps" href="${h.href}" target="_blank" rel="noopener">${t("external_link")} <span aria-hidden="true">↗</span>${newTab()}</a>`}</div></div>
+    </section>
+    <section class="wrap sec t-gal-wrap" aria-labelledby="gal-t">
+      <h2 id="gal-t" class="label" style="margin-bottom:32px">${t("tp_gallery")}</h2>
+      <ul class="t-gal ${x.galLayout}">${gal}</ul>
+    </section>
+  </div></div>`;
 };
 
 V.approach = () => pageHead("Approach", t("approach_intro")) +
   img("darkroom", "", "", 2400, 'style="width:100%;height:clamp(280px,42vw,600px);object-fit:cover"') +
   areasBlock("areas_title", "h2") + `
-  <section class="light moment" aria-label="${esc(M.represent)}"><blockquote lang="en">${M.represent}</blockquote></section>
+  ${moment(M.c07)}
   <section aria-labelledby="how-t"><div class="wrap sec split" style="align-items:flex-start;gap:48px 80px">
     <div class="how" style="flex:1 1 360px;max-width:560px">
       <h2 id="how-t" class="label" style="margin-bottom:28px">${t("how_title")}</h2>
@@ -1265,7 +1716,8 @@ V.approach = () => pageHead("Approach", t("approach_intro")) +
     </div>
     ${img("geometric", "", "", 1400, 'style="flex:1 1 380px;width:100%;aspect-ratio:4/5;object-fit:cover"')}
   </div></section>
-  <section class="light moment" aria-label="${esc(M.connect)}"><blockquote lang="en">${M.connect}</blockquote><p>${en(M.less)} — ${t("moment_less")}</p></section>
+  ${moment(M.c03, t("c03_note"))}
+  ${img("marbleWhite", "", "", 2400, 'style="width:100%;height:clamp(200px,24vw,360px);object-fit:cover"')}
   ${founderBlock()}
   ${cta(t("cta_title"), t("cta_text"))}`;
 
@@ -1364,7 +1816,11 @@ V.contact = () => pageHead(t("contact_title"), t("contact_intro")) + `
       <div><dt>${t("d_phone")}</dt><dd>+351 [000 000 000]</dd></div>
       <div><dt>${t("d_office")}</dt><dd><a href="https://www.google.com/maps?q=Rua%20Castilho%20Nr.%2039%2013%C2%BA%20C%201250-068%20-%20LISBOA.%20PORTUGAL." target="_blank" rel="noopener" style="text-decoration:none">Rua Castilho 39, 13.º C<br>1250-068 Lisboa, Portugal${newTab()}</a></dd></div>
     </dl>
-    <div style="display:flex;flex-wrap:wrap;gap:0 28px"><a href="https://www.instagram.com/" target="_blank" rel="noopener" style="text-decoration:none;padding:12px 0;font-size:15px">Instagram</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener" style="text-decoration:none;padding:12px 0;font-size:15px">TikTok</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="text-decoration:none;padding:12px 0;font-size:15px">LinkedIn</a></div>
+    <ul class="social" aria-label="${t('social')}">
+  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+  <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg></a></li>
+  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg></a></li>
+</ul>
     ${img("upward", "", "", 1200, 'style="width:100%;aspect-ratio:4/3;object-fit:cover"')}
   </aside>
 </div>`;
@@ -1372,8 +1828,13 @@ V.contact = () => pageHead(t("contact_title"), t("contact_intro")) + `
 const buildIndex = () => [].concat(
   TALENTS.map(x => ({ type:t("type_talent"), title:tName(x), text:L(x.area), href:"#/talent/" + x.slug, img:tImg(x) })),
   JOURNAL.map(a => ({ type:"Journal · " + catOf(a), title:L(a.title), text:L(a.intro), href:"#/journal/" + a.slug, img:a.img })),
-  CASES.map(c => ({ type:t("type_case"), title:L(c.title), text:L(c.intro), href:"#/cases/" + c.slug, img:c.img })),
-  [{ type:t("type_page"), title:"Approach", text:t("approach_intro"), href:"#/approach", img:"darkroom" },
+  CULTURE.map(c => ({ type:t("type_case"), title:L(c.title), text:L(c.text), href:"#/culture", img:c.img })),
+  CASES.map(c => ({ type:"Cases", title:L(c.title), text:L(c.intro), href:"#/cases/" + c.slug, img:c.img })),
+  PUBLIC.map(c => ({ type:t("type_ps"), title:L(c.title), text:L(c.text), href:"#/public-strategy", img:c.img })),
+  [{ type:t("type_page"), title:"Talent", text:t("talent_phil"), href:"#/talent", img:"pillars" },
+   { type:t("type_page"), title:"Culture", text:t("culture_phil"), href:"#/culture", img:"gallery" },
+   { type:t("type_page"), title:"Public Strategy", text:t("public_phil"), href:"#/public-strategy", img:"marble" },
+   { type:t("type_page"), title:"Approach", text:t("approach_intro"), href:"#/approach", img:"darkroom" },
    { type:t("type_page"), title:t("contact_title"), text:t("contact_intro"), href:"#/contact", img:"upward" }]
 );
 V.search = q => `<div style="max-width:1100px;margin:0 auto;padding:clamp(64px,9vw,120px) var(--pad) clamp(88px,10vw,144px)">
@@ -1395,7 +1856,7 @@ function runSearch(raw){
   sum.textContent = hits.length ? (hits.length === 1 ? t("s_one") : hits.length + " " + t("s_many")) + " “" + raw.trim() + "”" : t("s_none");
   const hl = s => { const n = norm(s), i = n.indexOf(q); return i < 0 ? esc(s) : esc(s.slice(0, i)) + "<mark>" + esc(s.slice(i, i + q.length)) + "</mark>" + esc(s.slice(i + q.length)); };
   res.innerHTML = hits.length ? `<ul style="list-style:none;margin:0;padding:0">${hits.map(r => `<li><a class="result" href="${r.href}">${img(r.img, "", "", 300)}<span style="display:flex;flex-direction:column;gap:8px;min-width:0"><span class="kicker">${esc(r.type)}</span><span class="c-title" style="font-size:20px">${hl(r.title)}</span><span class="c-sum">${hl(r.text)}</span></span></a></li>`).join("")}</ul>`
-    : `<div style="border-top:1px solid var(--rule);padding-top:36px;display:flex;flex-direction:column;gap:18px"><p style="margin:0;font-size:18px;line-height:1.7;color:var(--mist)">${esc(t("s_nomatch").replace("{q}", raw.trim()))}</p><div style="display:flex;flex-wrap:wrap;gap:0 28px"><a class="link-caps" href="#/talent">Talent</a><a class="link-caps" href="#/journal">Journal</a><a class="link-caps" href="#/cases">Cases</a></div></div>`;
+    : `<div style="border-top:1px solid var(--rule);padding-top:36px;display:flex;flex-direction:column;gap:18px"><p style="margin:0;font-size:18px;line-height:1.7;color:var(--mist)">${esc(t("s_nomatch").replace("{q}", raw.trim()))}</p><div style="display:flex;flex-wrap:wrap;gap:0 28px"><a class="link-caps" href="#/talent">Talent</a><a class="link-caps" href="#/culture">Culture</a><a class="link-caps" href="#/public-strategy">Public Strategy</a></div></div>`;
 }
 
 const legal = (title, intro, secs) => pageHead(title, intro) + `<div class="wrap" style="padding-bottom:clamp(88px,10vw,144px)"><div class="legal">${secs.map(s => `<section${s[2] ? ` id="${s[2]}"` : ""}><h2>${esc(L(s[0]))}</h2><p>${esc(L(s[1]))}</p></section>`).join("")}</div></div>`;
@@ -1415,6 +1876,7 @@ function applyStatic(){
   document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.getAttribute("data-i18n")); });
   document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
   document.querySelectorAll("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
   document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
   const md = document.querySelector('meta[name="description"]');
   if (md) md.setAttribute("content", t("f_about"));
@@ -1442,6 +1904,8 @@ function route(){
   else if (sec === "approach"){ html = V.approach(); key = "approach"; title = "Approach"; }
   else if (sec === "journal" && !parts[1]){ html = V.journal(query); key = "journal"; title = "Journal"; }
   else if (sec === "journal"){ html = V.article(parts[1]); key = "journal"; const a = JOURNAL.find(x => x.slug === parts[1]); title = a ? L(a.title) : ""; }
+  else if (sec === "culture"){ html = V.culture(); key = "culture"; title = "Culture"; }
+  else if (sec === "public-strategy"){ html = V.publicStrategy(); key = "public"; title = "Public Strategy"; }
   else if (sec === "cases" && !parts[1]){ html = V.cases(); key = "cases"; title = "Cases"; }
   else if (sec === "cases"){ html = V.case(parts[1]); key = "cases"; const c = CASES.find(x => x.slug === parts[1]); title = c ? L(c.title) : ""; }
   else if (sec === "contact"){ html = V.contact(); key = "contact"; title = t("contact_title"); }
@@ -1452,7 +1916,8 @@ function route(){
 
   app.innerHTML = html;
   document.title = title ? title + " — LIONS" : "LIONS — " + CLAIM;
-  header.classList.toggle("overlay", key === "home");
+  header.classList.toggle("overlay", key === "home" || key === "talent" && (!parts[1] || (tBySlug(parts[1]) || {}).hero === "full") || key === "culture" || key === "public");
+  if (key === "home") bindCarousel();
   document.querySelectorAll("[data-key]").forEach(a => a.getAttribute("data-key") === key ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
   if (!route.keepFocus) closeMenu(false);
   if (!route.keepScroll) window.scrollTo(0, 0);
@@ -1522,7 +1987,7 @@ panel.addEventListener("keydown", e => {
   if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
   else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
 });
-window.addEventListener("resize", () => { if (window.innerWidth > 900) closeMenu(false); });
+window.addEventListener("resize", () => { if (window.innerWidth > 1180) closeMenu(false); });
 
 /* contact form */
 function bindContact(){
@@ -1553,6 +2018,54 @@ function bindSearch(){
   document.getElementById("qclear").addEventListener("click", () => { input.value = ""; runSearch(""); input.focus(); history.replaceState(null, "", "#/search"); });
 }
 
+/* home talent slideshow: scroll-snap, previous/next buttons, no autoplay */
+function bindCarousel(){
+  const track = document.getElementById("tal-track"); if (!track) return;
+  const btns = [...document.querySelectorAll("[data-car]")];
+  const step = () => { const li = track.querySelector("li"); return li ? li.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 24) : 300; };
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    btns.forEach(b => { const d = +b.dataset.car; const off = d < 0 ? track.scrollLeft <= 2 : track.scrollLeft >= max; b.disabled = off; b.setAttribute("aria-disabled", String(off)); });
+  };
+  btns.forEach(b => b.addEventListener("click", () => track.scrollBy({ left: +b.dataset.car * step(), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })));
+  track.addEventListener("scroll", () => requestAnimationFrame(update), { passive:true });
+  window.addEventListener("resize", update);
+  update();
+}
+
+/* newsletter (prototype: validation only; integration with the external platform to be configured) */
+const nlForm = document.getElementById("nlForm");
+nlForm.addEventListener("submit", e => {
+  e.preventDefault();
+  const inp = document.getElementById("nl-email"), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value.trim());
+  inp.setAttribute("aria-invalid", ok ? "false" : "true");
+  document.getElementById("nl-err").hidden = ok;
+  const done = document.getElementById("nl-ok");
+  if (!ok){ inp.focus(); done.hidden = true; return; }
+  done.textContent = t("nl_ok"); done.hidden = false; nlForm.reset();
+});
+
+/* highlight pop-up: optional, once per visit, after the cookie choice */
+const promo = document.getElementById("promo");
+function showPromo(){
+  if (!POPUP.enabled) return;
+  let seen = false; try { seen = sessionStorage.getItem("lions-promo") === "1"; } catch(e){}
+  if (seen) return;
+  try { sessionStorage.setItem("lions-promo", "1"); } catch(e){}
+  setTimeout(() => {
+    document.getElementById("promoImg").src = srcOf(POPUP.img, 1200);
+    document.getElementById("promoTitle").textContent = t("promo_title");
+    document.getElementById("promoText").textContent = t("promo_text");
+    const a = document.getElementById("promoLink");
+    a.href = POPUP.href; a.innerHTML = t("promo_link") + (POPUP.external ? ' <span aria-hidden="true">↗</span>' + newTab() : "");
+    if (POPUP.external){ a.target = "_blank"; a.rel = "noopener"; } else { a.removeAttribute("target"); }
+    if (typeof promo.showModal === "function") promo.showModal(); else promo.setAttribute("open", "");
+  }, 1200);
+}
+const closePromo = () => { if (typeof promo.close === "function") promo.close(); else promo.removeAttribute("open"); };
+document.getElementById("promoClose").addEventListener("click", closePromo);
+promo.addEventListener("click", e => { if (e.target === promo || e.target.closest("#promoLink")) closePromo(); });
+
 /* cookies (in memory). While the banner is open, keep focused elements clear of it (WCAG 2.4.11) */
 const cookie = document.getElementById("cookie"), opts = document.getElementById("cookieOpts"), custom = document.getElementById("ckCustom");
 let consentChoice = null;
@@ -1563,6 +2076,7 @@ cookie.addEventListener("click", e => {
   const k = b.dataset.ck;
   consentChoice = k === "custom" ? (document.getElementById("ckAnalytics").checked ? "all" : "essential") : k;
   hideCookie();
+  showPromo();
 });
 custom.addEventListener("click", () => { opts.hidden = !opts.hidden; custom.setAttribute("aria-expanded", String(!opts.hidden)); custom.textContent = opts.hidden ? t("ck_choose") : t("ck_hide"); showCookie(); });
 document.getElementById("cookieSettings").addEventListener("click", () => { showCookie(); document.getElementById("ckAnalytics").checked = consentChoice === "all"; cookie.querySelector("button[data-ck='all']").focus(); });
@@ -1612,6 +2126,47 @@ applyStatic();
 let remembered = false;
 try { remembered = sessionStorage.getItem("lions-preview") === GATE_HASH; } catch(e){}
 if (remembered) unlock(); else gPw.focus();
+})();
+</script>
+
+<script>
+/* Spotify player — wireframe. The embed only loads on the first open (performance; third-party cookies). */
+(function(){
+  "use strict";
+  const box = document.getElementById("spPlayer"), tab = document.getElementById("spTab"), frame = document.getElementById("spFrame");
+  const L = { en:{ region:"Music player", open:"Open music player", close:"Close music player" },
+              pt:{ region:"Leitor de música", open:"Abrir leitor de música", close:"Fechar leitor de música" } };
+  const lang = () => (document.documentElement.lang || "en").startsWith("pt") ? "pt" : "en";
+  const label = () => { const o = box.classList.contains("is-open"); tab.setAttribute("aria-label", L[lang()][o ? "close" : "open"]); box.setAttribute("aria-label", L[lang()].region); };
+  function setOpen(open, focusTab){
+    if (open && !frame.src) frame.src = frame.dataset.src;
+    box.classList.toggle("is-open", open);
+    tab.setAttribute("aria-expanded", String(open));
+    label();
+    if (focusTab) tab.focus();
+  }
+  tab.addEventListener("click", () => setOpen(!box.classList.contains("is-open")));
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape" || !box.classList.contains("is-open")) return;
+    if (document.querySelector("dialog[open]") || !document.getElementById("menuPanel").hidden) return;   // those handle Escape themselves
+    setOpen(false, box.contains(document.activeElement));
+  });
+  new MutationObserver(label).observe(document.documentElement, { attributes:true, attributeFilter:["lang"] });
+  /* lift the player above the cookie banner when they would overlap (small screens) */
+  const cookie = document.getElementById("cookie");
+  function lift(){
+    let h = 0;
+    if (!cookie.hidden){
+      const c = cookie.getBoundingClientRect(), p = { left: window.innerWidth - 6 - 36 - (box.classList.contains("is-open") ? 320 : 0) };
+      const base = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--sp-bottom")) || 32;
+      if (c.right > p.left) h = window.innerHeight - c.top - base + 12;
+    }
+    document.documentElement.style.setProperty("--sp-lift", Math.max(0, h) + "px");
+  }
+  new MutationObserver(lift).observe(cookie, { attributes:true, attributeFilter:["hidden"] });
+  window.addEventListener("resize", lift);
+  tab.addEventListener("click", () => setTimeout(lift, 0));
+  label(); lift();
 })();
 </script>
 </body>
