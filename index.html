@@ -20,6 +20,7 @@
 "founder":{"@type":"Person","name":"João Belo"},
 "sameAs":["https://www.instagram.com/[handle]","https://www.tiktok.com/@[handle]","https://www.linkedin.com/company/[handle]"]}
 </script>
+
 <style>
 /* ------------------------------------------------------------------
    PP Neue Montreal — licensed font (approved by the client). Licence for web and print
@@ -92,18 +93,26 @@ button{font-family:inherit}
 .menu-btn{display:none;align-items:center;gap:14px;min-height:44px;background:transparent;border:0;color:var(--bone);font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding:0}
 .menu-btn span.lines{display:inline-flex;flex-direction:column;gap:6px}
 .menu-btn span.lines i{display:block;width:26px;height:1px;background:currentColor}
-@media (max-width:1180px){ .head-right .nav,.head-right .lang{display:none} .menu-btn{display:inline-flex} }
+.head-right .nav{display:none}
+.menu-btn{display:inline-flex}
+@media (max-width:900px){ .head-right .lang{display:none} }
 
-/* mobile menu */
+@media (max-width:480px){ .head-right{gap:2px} .menu-btn > span[data-i18n]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap} .menu-btn{min-width:44px;justify-content:center} .wordmark{letter-spacing:.3em} }
+/* full-screen menu (all breakpoints, as in the client mockup) */
 .menu-panel{position:fixed;inset:0;z-index:60;background:var(--ink);display:flex;flex-direction:column;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 10px) var(--pad) calc(env(safe-area-inset-bottom,0px) + 28px)}
 .menu-panel[hidden]{display:none}
-.menu-panel .top{display:flex;justify-content:space-between;align-items:center}
-.menu-panel nav{display:flex;flex-direction:column;margin-top:40px}
-.menu-panel nav a{font-size:clamp(22px,7vw,28px);font-weight:300;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:12px 0;color:var(--bone);border-bottom:1px solid var(--rule)}
-.menu-panel nav a[aria-current="page"]{color:var(--accent)}
-.menu-panel .lang{margin-top:28px}
-.menu-panel .lang button{font-size:14px;min-width:48px}
-.menu-panel .foot{margin-top:auto;padding-top:32px;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--ash)}
+.menu-panel .top{display:flex;justify-content:space-between;align-items:center;max-width:var(--max);width:100%;margin:0 auto}
+.menu-close{display:inline-flex;align-items:center;gap:14px;min-height:44px;background:none;border:0;color:var(--bone);cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;padding:0}
+.m-body{flex:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:40px 80px;align-items:center;max-width:var(--max);width:100%;margin:0 auto;padding:40px 0}
+.m-body nav{display:flex;flex-direction:column}
+.m-body nav a{font-size:clamp(28px,4.6vw,64px);font-weight:200;letter-spacing:.1em;line-height:1.15;text-transform:uppercase;text-decoration:none;padding:6px 0;color:var(--bone)}
+.m-body nav a:hover,.m-body nav a[aria-current="page"]{color:var(--accent)}
+.m-side{display:flex;flex-direction:column;gap:28px}
+.m-img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.m-info{display:flex;flex-direction:column;gap:18px}
+.m-search{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:10px 0;align-self:flex-start}
+.m-contact{margin:0;font-size:15px;line-height:1.7;color:var(--ash)}
+@media (max-width:900px){ .m-body{grid-template-columns:1fr;align-items:start} .m-img{display:none} .m-body nav a{font-size:clamp(24px,8vw,34px);border-bottom:1px solid var(--rule);padding:12px 0} }
 
 /* page heads */
 .page-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 64px;padding-top:clamp(56px,9vw,136px);padding-bottom:clamp(48px,6vw,88px)}
@@ -459,6 +468,108 @@ mark{background:transparent;color:var(--accent)}
 @media (max-width:520px){ .t-gal.mosaic{grid-template-columns:1fr;grid-auto-rows:auto} .t-gal.mosaic li:first-child{grid-column:span 1} .t-gal.mosaic li img{aspect-ratio:4/5;height:auto} .t-gal.columns{columns:1} .t-gal.duo{grid-template-columns:1fr} .t-gal.duo li:nth-child(even){margin-top:0} }
 .tone-gal{filter:none}
 
+/* ===== Look & Feel v2 — closer to the client moodboard ===== */
+:root{--ink:#0F0E0D;--night:#070707;--panel:#1C1B1A;--stone:#DCD6CF;--rule:#262422;--rule-2:#36332F}
+.tone{filter:none}
+.light{background-color:var(--stone);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:240px 240px}
+.site-header{border-bottom-color:var(--rule)}
+.site-header.overlay{border-bottom-color:transparent}
+.wordmark{font-weight:200;letter-spacing:.42em;font-size:15px}
+.hero h1{font-weight:100;letter-spacing:.08em}
+.hero::after{background:radial-gradient(ellipse 60% 52% at 50% 54%,rgba(10,9,8,.52),rgba(10,9,8,0) 76%),linear-gradient(180deg,rgba(10,9,8,.55) 0,rgba(10,9,8,.32) 26%,rgba(10,9,8,.36) 70%,rgba(10,9,8,.72) 100%)}
+.hero p{letter-spacing:.42em;font-weight:400;color:#F2E6DA}
+.manifesto h2{font-weight:300;letter-spacing:.24em}
+.page-title{font-weight:200;letter-spacing:.1em}
+.page-title{overflow-wrap:break-word;hyphens:auto}
+@media (max-width:480px){ .page-title{font-size:34px;letter-spacing:.05em} }
+.label{letter-spacing:.24em}
+.area-hero .slogan{font-weight:400}
+/* talent portraits in lists: warm monochrome, colour on hover / focus */
+.card .tone-portrait{filter:grayscale(1) sepia(.16) contrast(1.04) brightness(.94);transition:filter .6s ease}
+a.card:hover .tone-portrait,a.card:focus-visible .tone-portrait{filter:none}
+@media (prefers-reduced-motion:reduce){ .card .tone-portrait{transition:none} }
+/* three areas as image panels */
+.panels{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;isolation:isolate;text-decoration:none;color:#fff}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+.panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,7,6,.9) 0%,rgba(8,7,6,.55) 40%,rgba(8,7,6,.1) 75%)}
+.panel:hover img{transform:scale(1.04)}
+.panel:hover,.panel:focus-visible{color:#fff}
+.p-txt{position:absolute;left:0;right:0;bottom:0;padding:28px;display:flex;flex-direction:column;gap:12px}
+.p-name{font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#fff}
+.p-desc{font-size:15px;line-height:1.6;color:#EDE7E0;max-width:26em}
+.p-go{color:#fff;margin-top:4px}
+@media (max-width:860px){ .panels{grid-template-columns:1fr} .panel{aspect-ratio:4/3} }
+@media (prefers-reduced-motion:reduce){ .panel img{transition:none} .panel:hover img{transform:none} }
+
+
+
+/* ===== footer v2: newsletter row, four columns, full-width wordmark ===== */
+.fx-news{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 80px;align-items:end;padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid var(--rule)}
+.fx-news .f-h{margin-bottom:12px}
+.fx-news-title{margin:0;font-size:clamp(24px,2.4vw,32px);font-weight:300;line-height:1.3;color:var(--paper);max-width:20em}
+.fx-news-form{display:flex;flex-direction:column;gap:10px;max-width:560px}
+.fx-lab{margin:0}
+.fx-field{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.fx-field:focus-within{border-bottom-color:var(--bone)}
+.fx-field input{flex:1;min-width:0;min-height:48px;border:0;background:transparent;color:var(--paper);font-family:inherit;font-size:16px;padding:0 2px}
+.fx-field input::placeholder{color:#9A9189}
+.fx-field input:focus-visible{outline:none}
+.fx-field:has(input[aria-invalid="true"]){border-bottom-color:var(--error)}
+.fx-sub{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 2px;background:none;border:0;color:var(--paper);cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.fx-sub:hover{color:var(--accent)}
+.fx-main{display:grid;grid-template-columns:minmax(0,4.2fr) minmax(0,2fr) minmax(0,2.4fr) minmax(0,1.8fr);gap:40px 48px;padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(40px,5vw,72px)}
+.fx-brand{display:flex;flex-direction:column;align-items:flex-start;gap:20px;max-width:420px}
+.fx-brand .f-about{margin:0}
+.fx-cta{border-bottom:1px solid var(--line);padding:10px 0;margin-top:4px}
+.fx-soc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.fx-soc a{display:inline-flex;align-items:center;gap:12px;padding:9px 0;font-size:15px;color:var(--mist);text-decoration:none}
+.fx-soc a svg{color:var(--dust)}
+.fx-soc a:hover,.fx-soc a:hover svg{color:var(--accent)}
+.fx-mark{position:relative;padding-bottom:clamp(20px,2.4vw,36px)}
+.fx-word{display:block;color:var(--paper);text-decoration:none;padding-right:clamp(0px,5vw,72px)}
+.fx-word svg{display:block;width:100%;height:auto;overflow:visible}
+.fx-word text{font-family:var(--sans);font-weight:100;font-size:270px;letter-spacing:-.01em;fill:currentColor}
+.fx-word:hover{color:var(--accent)}
+.fx-up{position:absolute;right:0;bottom:clamp(20px,2.4vw,36px);width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:transparent;color:var(--paper);cursor:pointer}
+.fx-up:hover{border-color:var(--bone)}
+.fx-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 32px;border-top:1px solid var(--rule);padding-top:8px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+.fx-legal{display:flex;flex-wrap:wrap;gap:0 28px;margin-left:auto}
+.fx-bottom a,.fx-bottom button{font-size:13px;color:var(--dust);text-decoration:none;padding:12px 0;background:none;border:0;cursor:pointer;font-family:inherit}
+.fx-bottom a:hover,.fx-bottom button:hover{color:var(--accent)}
+.fx-bottom .f-loba{padding:0}
+@media (max-width:1024px){ .fx-main{grid-template-columns:repeat(3,minmax(0,1fr))} .fx-brand{grid-column:1 / -1;max-width:560px} }
+@media (max-width:760px){ .fx-news{grid-template-columns:minmax(0,1fr)} }
+.fx-sub{flex-shrink:0}
+@media (max-width:600px){ .fx-main{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .fx-main > :nth-child(3){grid-column:1 / -1;grid-row:3} .fx-bottom{flex-direction:column;align-items:flex-start} .fx-legal{margin-left:0} .fx-word{padding-right:56px} }
+html[data-theme="light"] .fx-field input::placeholder{color:#9A9189}
+
+/* ===== header v2: centred boxed wordmark, split navigation, sticky ===== */
+:root{--hh:76px}
+html{scroll-padding-top:calc(var(--hh) + 16px)}
+.site-header,.site-header.overlay{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(18,17,16,.78);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,240,235,.08);transition:background-color .35s ease,border-color .35s ease}
+.site-header.overlay:not(.is-stuck){background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:transparent}
+html[data-theme="light"] .site-header:not(.overlay),html[data-theme="light"] .site-header.is-stuck{background:rgba(241,236,228,.86);border-bottom-color:rgba(26,25,24,.1)}
+body:not(.hdr-over) #app{padding-top:var(--hh)}
+.hx{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:var(--hh);padding-top:0;padding-bottom:0}
+.hx-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:9px 10px 9px 16px;border:1px solid var(--accent);font-size:14px;font-weight:300;letter-spacing:.42em;line-height:1;color:var(--paper);white-space:nowrap}
+.hx-logo:hover{color:var(--accent)}
+.hx-nav{flex:1;display:flex;justify-content:space-between;align-items:center;min-width:0}
+.hx-nav .nav{list-style:none;margin:0;padding:0;display:flex;gap:28px}
+.hx-nav .nav a{font-size:11px;letter-spacing:.2em;padding:14px 0 13px}
+.hx-r{margin-right:8px}
+.hx .head-right{display:flex;align-items:center;gap:6px}
+.hx .head-right .lang{margin-left:4px}
+.hx .menu-btn{display:none}
+.site-header.overlay:not(.is-stuck) .hx-nav .nav a{color:#E9E4DE}
+.site-header.overlay:not(.is-stuck) .hx-nav .nav a[aria-current="page"]{color:#fff}
+@media (max-width:1180px){
+  .hx-nav{display:none}
+  .hx-logo{position:static;transform:none}
+  .hx .menu-btn{display:inline-flex}
+}
+@media (prefers-reduced-motion:reduce){ .site-header{transition:none} }
+
 /* cookie */
 .cookie{position:fixed;left:20px;right:20px;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:50;max-width:460px;background:var(--panel);border:1px solid var(--rule-2);padding:22px;display:flex;flex-direction:column;gap:16px}
 .cookie[hidden]{display:none}
@@ -773,6 +884,22 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
 .t-high .txt p:not(.kicker){color:var(--muted);font-size:15px}
 .t-gal figcaption{color:var(--faint);font-size:12px}
 .car-btn{border-color:var(--border-2);color:var(--fg);border-radius:8px} .car-btn:hover{background:var(--surface)}
+#app{padding-top:0 !important}
+.hx-logo{border:1px solid var(--border-2) !important;border-radius:6px;color:var(--fg) !important;font-weight:700 !important;letter-spacing:.2em !important;font-size:13px !important;padding:8px 8px 8px 14px !important}
+.hx-nav .nav a{font-size:13px !important;letter-spacing:0 !important;text-transform:none !important;padding:8px 12px !important}
+.site-header.overlay:not(.is-stuck) .hx-nav .nav a{color:var(--muted)}
+.fx-news{border-bottom-color:var(--border)} .fx-news-title{font-size:clamp(20px,2vw,26px);font-weight:500;color:var(--fg)}
+.fx-field{border-bottom-color:var(--border-2)} .fx-field input{color:var(--fg);font-size:14px} .fx-sub{color:var(--fg);letter-spacing:.04em;text-transform:none;font-weight:600;font-size:13px}
+.fx-soc a{color:var(--fg2);font-size:13px} .fx-soc a svg{color:var(--faint)}
+.fx-word text{font-weight:300 !important} .fx-up{border-color:var(--border-2);color:var(--fg);border-radius:8px}
+.fx-bottom{border-top-color:var(--border)} .fx-bottom a,.fx-bottom button{color:var(--faint) !important;font-size:12px !important}
+.panel{border-radius:12px;border:1px solid var(--border)} .panel img{border:0 !important;border-radius:0 !important;background-position:center 30%,0 0,0 0 !important}
+.p-name{font-size:12px;letter-spacing:.12em;font-weight:600} .p-desc{font-size:14px;color:var(--fg2)}
+.menu-close{color:var(--fg2);font-size:12px;letter-spacing:.04em;text-transform:none;font-weight:600}
+.m-body nav a{font-size:clamp(20px,2.4vw,30px) !important;font-weight:500 !important;letter-spacing:-.01em !important;text-transform:none !important;color:var(--fg2)}
+.m-body nav a[aria-current="page"]{color:var(--fg);background:var(--surface)}
+.m-search{color:var(--fg);font-size:13px;letter-spacing:0;text-transform:none;font-weight:600} .m-contact{color:var(--muted);font-size:13px}
+.m-img{border-radius:12px}
 .svc > div{border-top-color:var(--border)} .svc dt{font-size:17px;font-weight:500;color:var(--fg)} .svc dd{font-size:14px;color:var(--muted)}
 .go{color:var(--faint);font-size:12px}
 .social a{border-color:var(--border-2);color:var(--fg2);border-radius:8px} .social a:hover{color:var(--fg);background:var(--surface)}
@@ -817,7 +944,7 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
 </head>
 <body class="locked">
 <div class="gate" id="gate">
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="tone">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="tone" data-mood="hero">
   <form id="gateForm" novalidate aria-labelledby="gateTitle">
     <div class="lang" role="group" data-i18n-aria="langGroup">
       <button type="button" data-lang="en" lang="en" aria-label="English">EN</button><span class="sep" aria-hidden="true">|</span><button type="button" data-lang="pt" lang="pt-PT" aria-label="Português">PT</button>
@@ -840,20 +967,25 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
 <a class="skip" href="#app" data-i18n="skip"></a>
 
 <header class="site-header" id="siteHeader">
-  <div class="wrap bar">
-    <a class="wordmark" href="#/" data-i18n-aria="home">LIONS</a>
+  <div class="wrap bar hx">
+    <a class="wordmark hx-logo" href="#/" data-i18n-aria="home">LIONS</a>
+    <nav class="hx-nav" data-i18n-aria="navMain">
+      <ul class="nav hx-l">
+        <li><a href="#/talent" data-key="talent" data-i18n="nav_talent"></a></li>
+        <li><a href="#/culture" data-key="culture" data-i18n="nav_culture"></a></li>
+        <li><a href="#/public-affairs" data-key="public" data-i18n="nav_public"></a></li>
+      </ul>
+      <ul class="nav hx-r">
+        <li><a href="#/approach" data-key="approach" data-i18n="nav_approach"></a></li>
+        <li><a href="#/journal" data-key="journal" data-i18n="nav_journal"></a></li>
+        <li><a href="#/contact" data-key="contact" data-i18n="nav_contact"></a></li>
+      </ul>
+    </nav>
     <div class="head-right">
-      <nav class="nav" data-i18n-aria="navMain">
-        <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
-        <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
-        <a href="#/public-affairs" data-key="public" data-i18n="nav_public"></a>
-        <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
-        <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
-        <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
-        <a class="icon-btn" href="#/search" data-key="search" data-i18n-aria="openSearch" style="border:0;padding:0;margin-right:-10px">
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6.75" cy="6.75" r="5.25"/><path d="M10.6 10.6L15 15"/></svg>
-        </a>
-      </nav>
+      <a class="icon-btn" href="#/search" data-key="search" data-i18n-aria="openSearch">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6.75" cy="6.75" r="5.25"/><path d="M10.6 10.6L15 15"/></svg>
+      </a>
+      
       <div class="lang" role="group" data-i18n-aria="langGroup">
         <button type="button" data-lang="en" lang="en" aria-label="English">EN</button><span class="sep" aria-hidden="true">|</span><button type="button" data-lang="pt" lang="pt-PT" aria-label="Português">PT</button>
       </div>
@@ -865,30 +997,35 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
 <div class="menu-panel" id="menuPanel" hidden role="dialog" aria-modal="true" data-i18n-aria="menu">
   <div class="top">
     <a class="wordmark" href="#/" data-i18n-aria="home">LIONS</a>
-    <button class="icon-btn" id="menuClose" type="button" data-i18n-aria="closeMenu">
+    <button class="menu-close" id="menuClose" type="button" data-i18n-aria="closeMenu"><span data-i18n="close" aria-hidden="true"></span>
       <svg aria-hidden="true" width="18" height="18" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 1l12 12M13 1L1 13"/></svg>
     </button>
   </div>
-  <nav data-i18n-aria="navMobile">
-    <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
-    <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
-    <a href="#/public-affairs" data-key="public" data-i18n="nav_public"></a>
-    <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
-    <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
-    <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
-    <a href="#/search" data-key="search" data-i18n="nav_search"></a>
-  </nav>
-  <div class="lang" role="group" data-i18n-aria="langGroup">
-    <button type="button" data-lang="en" lang="en" aria-label="English">EN</button><span class="sep" aria-hidden="true">|</span><button type="button" data-lang="pt" lang="pt-PT" aria-label="Português">PT</button>
-  </div>
-  <div class="foot">
-    <ul class="social" data-i18n-aria="social">
-  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
-  <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg></a></li>
-  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg></a></li>
-</ul>
-    <span data-i18n="email_value"></span>
-    <span>Rua Castilho 39, 13.º C, 1250-068 Lisboa</span>
+  <div class="m-body">
+    <nav data-i18n-aria="navMain">
+      <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
+      <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
+      <a href="#/public-affairs" data-key="public" data-i18n="nav_public"></a>
+      <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
+      <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
+      <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
+    </nav>
+    <aside class="m-side">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="m-img" data-mood="window">
+      <div class="m-info">
+        <div class="lang" role="group" data-i18n-aria="langGroup">
+          <button type="button" data-lang="en" lang="en" aria-label="English">EN</button><span class="sep" aria-hidden="true">|</span><button type="button" data-lang="pt" lang="pt-PT" aria-label="Português">PT</button>
+        </div>
+        <a class="m-search" href="#/search" data-i18n="nav_search"></a>
+        
+        <ul class="social" data-i18n-aria="social">
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg></a></li>
+        </ul>
+        <p class="m-contact"><span data-i18n="email_value"></span><br>Rua Castilho 39, 13.º C<br>1250-068 Lisboa</p>
+      </div>
+    </aside>
   </div>
 </div>
 
@@ -896,72 +1033,72 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <a class="f-word" href="#/" data-i18n-aria="home">LIONS</a>
-        <span class="f-tag" lang="en" data-claim>Talent · Culture · Public Affairs</span>
-        <p class="f-about" data-i18n="f_about"></p>
-        <a class="link-caps" href="#/contact" style="border-bottom:1px solid var(--line);padding-bottom:10px"><span data-i18n="cta_btn"></span> <svg aria-hidden="true" width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 5h13M9 1l4 4-4 4"/></svg></a>
-      </div>
-      <div class="f-cols">
-        <nav aria-labelledby="fh-explore">
-          <h2 class="f-h" id="fh-explore" data-i18n="f_explore"></h2>
-          <ul class="f-list">
-            <li><a href="#/talent" data-i18n="nav_talent"></a></li>
-            <li><a href="#/culture" data-i18n="nav_culture"></a></li>
-            <li><a href="#/public-affairs" data-i18n="nav_public"></a></li>
-            <li><a href="#/approach" data-i18n="nav_approach"></a></li>
-            <li><a href="#/journal" data-i18n="nav_journal"></a></li>
-            <li><a href="#/cases" data-i18n="nav_cases"></a></li>
-            <li><a href="#/contact" data-i18n="nav_contact"></a></li>
-            <li><a href="#/search" data-i18n="nav_search"></a></li>
-          </ul>
-        </nav>
-        <div>
-          <h2 class="f-h" data-i18n="f_contact"></h2>
-          <address class="f-addr">
-            <span><span class="k" data-i18n="d_email"></span><span data-i18n="email_value"></span></span>
-            <span><span class="k" data-i18n="d_phone"></span>+351 [000 000 000]</span>
-            <span><span class="k" data-i18n="d_office"></span><a href="https://www.google.com/maps?q=Rua%20Castilho%20Nr.%2039%2013%C2%BA%20C%201250-068%20-%20LISBOA.%20PORTUGAL." target="_blank" rel="noopener">Rua Castilho 39, 13.º C<br>1250-068 Lisboa, Portugal</a></span>
-          </address>
-        </div>
-        <div>
-          <h2 class="f-h" id="fh-follow" data-i18n="f_follow"></h2>
-<ul class="social" aria-labelledby="fh-follow">
-  <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
-  <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg></a></li>
-  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg></a></li>
-</ul>
-        </div>
-      </div>
-    </div>
-    <section class="newsletter" aria-labelledby="nl-t">
-      <div class="txt"><h2 id="nl-t" data-i18n="nl_title"></h2><p data-i18n="nl_text"></p></div>
-      <form id="nlForm" novalidate>
-        <label for="nl-email" class="sr-only" data-i18n="nl_label"></label>
-        <div class="nl-row">
+    <section class="fx-news" aria-labelledby="nl-t">
+      <div class="fx-news-txt"><h2 id="nl-t" class="f-h" data-i18n="nl_title"></h2><p class="fx-news-title" data-i18n="nl_text"></p></div>
+      <form id="nlForm" class="fx-news-form" novalidate>
+        <label for="nl-email" class="f-h fx-lab" data-i18n="d_email"></label>
+        <div class="fx-field">
           <input id="nl-email" type="email" autocomplete="email" data-i18n-ph="nl_ph" aria-describedby="nl-err nl-note">
-          <button class="btn btn-line" type="submit" data-i18n="nl_btn"></button>
+          <button type="submit" class="fx-sub"><span data-i18n="nl_btn"></span> <svg aria-hidden="true" width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 5h13M9 1l4 4-4 4"/></svg></button>
         </div>
         <span class="err" id="nl-err" hidden data-i18n="e_email"></span>
         <p class="nl-note" id="nl-note" data-i18n-html="nl_note"></p>
         <p class="nl-note" id="nl-ok" role="status" hidden></p>
       </form>
     </section>
-    <div class="f-bottom">
+
+    <div class="fx-main">
+      <div class="fx-brand">
+        <span class="f-tag" lang="en" data-claim>Talent · Culture · Public Affairs</span>
+        <p class="f-about" data-i18n="f_about"></p>
+        <a class="link-caps fx-cta" href="#/contact"><span data-i18n="cta_btn"></span> <svg aria-hidden="true" width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 5h13M9 1l4 4-4 4"/></svg></a>
+      </div>
+      <nav aria-labelledby="fh-explore">
+        <h2 class="f-h" id="fh-explore" data-i18n="f_explore"></h2>
+        <ul class="f-list">
+          <li><a href="#/talent" data-i18n="nav_talent"></a></li>
+          <li><a href="#/culture" data-i18n="nav_culture"></a></li>
+          <li><a href="#/public-affairs" data-i18n="nav_public"></a></li>
+          <li><a href="#/approach" data-i18n="nav_approach"></a></li>
+          <li><a href="#/journal" data-i18n="nav_journal"></a></li>
+          <li><a href="#/cases" data-i18n="nav_cases"></a></li>
+          <li><a href="#/contact" data-i18n="nav_contact"></a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="f-h" data-i18n="f_contact"></h2>
+        <address class="f-addr">
+          <span><span class="k" data-i18n="d_email"></span><span data-i18n="email_value"></span></span>
+          <span><span class="k" data-i18n="d_phone"></span>+351 [000 000 000]</span>
+          <span><span class="k" data-i18n="d_office"></span><a href="https://www.google.com/maps?q=Rua%20Castilho%20Nr.%2039%2013%C2%BA%20C%201250-068%20-%20LISBOA.%20PORTUGAL." target="_blank" rel="noopener">Rua Castilho 39, 13.º C<br>1250-068 Lisboa, Portugal</a></span>
+        </address>
+      </div>
+      <div>
+        <h2 class="f-h" id="fh-follow" data-i18n="f_follow"></h2>
+        <ul class="fx-soc" aria-labelledby="fh-follow">
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg> Instagram</a></li>
+          <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.6 2.8 2.5 4.6 5.2 4.8"/></svg> TikTok</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.8 10.2v6.3M7.8 7.4v.1M11.4 16.5v-6.3m0 3.1c0-1.8 1.2-3.1 2.8-3.1s2.6 1.1 2.6 3.1v3.2"/></svg> LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fx-mark">
+      <a class="fx-word" href="#/" data-i18n-aria="home"><svg viewBox="0 0 1000 200" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><text x="0" y="196">LIONS</text></svg></a>
+      <button type="button" class="fx-up" id="backTop" data-i18n-aria="back_top"><svg aria-hidden="true" width="12" height="16" viewBox="0 0 10 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 14V1M1 5l4-4 4 4"/></svg></button>
+    </div>
+
+    <div class="fx-bottom">
       <span class="f-copy" data-i18n="f_copy"></span>
-      <div class="f-legal">
+      <div class="fx-legal">
         <a href="#/privacy" data-i18n="privacy"></a>
         <a href="#/terms" data-i18n="terms"></a>
         <button type="button" id="cookieSettings" data-i18n="cookie_settings"></button>
       </div>
-      <div class="f-right">
-        <button type="button" class="f-up" id="backTop"><span data-i18n="back_top"></span> <svg aria-hidden="true" width="10" height="14" viewBox="0 0 10 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 14V1M1 5l4-4 4 4"/></svg></button>
-        <a class="f-loba" href="https://www.loba.com/" target="_blank" rel="noopener" title="Developed by LOBA" data-i18n-aria="developed_aria">
-          <span class="f-loba-txt" aria-hidden="true" data-i18n="developed"></span>
-          <span class="f-loba-mark" aria-hidden="true"></span>
-        </a>
-      </div>
+      <a class="f-loba" href="https://www.loba.com/" target="_blank" rel="noopener" title="Developed by LOBA" data-i18n-aria="developed_aria">
+        <span class="f-loba-txt" aria-hidden="true" data-i18n="developed"></span>
+        <span class="f-loba-mark" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </footer>
@@ -1047,7 +1184,7 @@ const en = s => `<span lang="en">${s}</span>`;
 
 const T = {
 en: {
-  skip:"Skip to content", home:"LIONS, homepage", navMain:"Main", navMobile:"Mobile", menu:"Menu", closeMenu:"Close menu", openSearch:"Search the site", langGroup:"Language",
+  close:"Close", theme_to_light:"Light mode", theme_to_dark:"Dark mode", skip:"Skip to content", home:"LIONS, homepage", navMain:"Main", navMobile:"Mobile", menu:"Menu", closeMenu:"Close menu", openSearch:"Search the site", langGroup:"Language",
   nav_talent:"Talent", nav_approach:"Approach", nav_journal:"Journal", nav_cases:"Cases", nav_contact:"Contact", nav_search:"Search",
   nav_culture:"Culture", nav_public:"Public Affairs", social:"Social media",
   discover:"Discover", area_label:"Area",
@@ -1092,7 +1229,7 @@ en: {
   read_approach:"Read our approach",
   founder_label:"Founder", founder_role:"Founder & Strategic Director",
   founder_bio:"Entrepreneur and founder of Naughty Boys, the agency he led for [13/14 years – to be confirmed] and a reference in the Portuguese talent and media market. A specialist in strategic positioning, representation and building relationships between personalities, brands and cultural projects, he has built a career on creating relevance, reputation and impact.",
-  founder_alt:"Portrait of João Belo, founder of LIONS (placeholder)",
+  founder_alt:"Portrait of João Belo, founder of LIONS",
   journal_label:"Journal", view_all_articles:"View all articles",
   cases_label:"Culture", view_all_cases:"View all projects",
   cta_title:"Start a conversation", cta_text:"For talent, cultural projects and public affairs, write to us. Every message is read by the team.", cta_btn:"Contact the agency",
@@ -1155,7 +1292,7 @@ en: {
   title_suffix:"LIONS"
 },
 pt: {
-  skip:"Saltar para o conteúdo", home:"LIONS, página inicial", navMain:"Principal", navMobile:"Navegação", menu:"Menu", closeMenu:"Fechar menu", openSearch:"Pesquisar no site", langGroup:"Idioma",
+  close:"Fechar", theme_to_light:"Modo claro", theme_to_dark:"Modo escuro", skip:"Saltar para o conteúdo", home:"LIONS, página inicial", navMain:"Principal", navMobile:"Navegação", menu:"Menu", closeMenu:"Fechar menu", openSearch:"Pesquisar no site", langGroup:"Idioma",
   nav_talent:"Talent", nav_approach:"Approach", nav_journal:"Journal", nav_cases:"Cases", nav_contact:"Contacto", nav_search:"Pesquisa",
   nav_culture:"Culture", nav_public:"Public Affairs", social:"Redes sociais",
   discover:"Descobrir", area_label:"Área",
@@ -1200,7 +1337,7 @@ pt: {
   read_approach:"Conhecer a nossa abordagem",
   founder_label:"Fundador", founder_role:"Fundador e Diretor Estratégico",
   founder_bio:"Empreendedor e fundador da Naughty Boys, agência que liderou durante [13/14 anos – a confirmar] e que se tornou uma referência no mercado português de talento e media. Especializado em posicionamento estratégico, representação e desenvolvimento de relações entre personalidades, marcas e projetos culturais, construiu uma carreira assente na criação de relevância, reputação e impacto.",
-  founder_alt:"Retrato de João Belo, fundador da LIONS (imagem provisória)",
+  founder_alt:"Retrato de João Belo, fundador da LIONS",
   journal_label:"Journal", view_all_articles:"Ver todos os artigos",
   cases_label:"Culture", view_all_cases:"Ver todos os projetos",
   cta_title:"Vamos conversar", cta_text:"Para talento, projetos culturais e public affairs, escreva-nos. Todas as mensagens são lidas pela equipa.", cta_btn:"Contactar a agência",
@@ -1270,13 +1407,12 @@ const U = () => PH;
 const PORTRAIT = () => PH;
 const PHOTOS = new Proxy({}, { get: () => PH });
 const GALPH = () => PH;
+const MOOD = new Proxy({}, { get: () => PH });
 const IMG = {
-  hero:"1769284010524-177ced162fc4", hallway:"1557226217-bf0da2478e6c", pillars:"1780383454564-0b7f76d12f57",
-  darkroom:"1787790175235-e0e2c8dd11df", geometric:"1763850407750-4671769329c1", monolith:"1522743791393-522312deeebf",
-  stairs:"1601993957728-1e56ab70c5a8", walkway:"1737442981890-0a87ef3ce9f5", building:"1546414701-81cc6963c67f",
-  facade:"1504625709867-b4e45e3bb9dd", tower:"1714765761465-e7a4974fa05b", church:"1762967029850-10ef3f175496",
-  windows:"1632504102536-6e1e1bb00a8e", upward:"1483366774565-c783b9f70e2c", gallery:"1774021795769-375b0a521d90",
-  marble:"1566305977571-5666677c6e98", marbleWhite:"1566041510394-cf7c8fe21800"
+  hero:"hero", hallway:"darkstairs", pillars:"colfig", darkroom:"window", geometric:"wall", monolith:"ball",
+  stairs:"stairs", walkway:"slit", building:"building", facade:"wall", tower:"slit", church:"darkstairs",
+  windows:"window", upward:"building", gallery:"ballbooks", marble:"stone", marbleWhite:"stone",
+  colfig:"colfig", ballbooks:"ballbooks", ball:"ball", stone:"stone", window:"window", slit:"slit", columns:"columns", darkstairs:"darkstairs", wall:"wall"
 };
 const AMB = Object.keys(IMG).filter(k => k !== "hero" && !k.startsWith("marble"));
 
@@ -1442,14 +1578,6 @@ const CULTURE = [
     title:P("[Gala / event] — [city]","[Gala / evento] — [cidade]"), text:P("[Image and press management for a cultural gala.] Internal link example.","[Gestão de imagem e imprensa para uma gala cultural.] Exemplo de link interno."),
     href:"#/journal/cultural-project-premiere-notes", external:false }
 ];
-const PUBLIC = [
-  { img:"building", type:P("Festival","Festival"), title:P("[Festival] — institutional positioning","[Festival] — posicionamento institucional"),
-    text:P("[Institutional positioning and relations with public partners for a festival edition.]","[Posicionamento institucional e relação com parceiros públicos para uma edição do festival.]"), href:"https://www.example.com/", external:true },
-  { img:"geometric", type:P("Cultural partnership","Parceria cultural"), title:P("[Brand] × [Public entity]","[Marca] × [Entidade pública]"),
-    text:P("[A partnership between a brand, a cultural project and a public entity.]","[Uma parceria entre uma marca, um projeto cultural e uma entidade pública.]"), href:"https://www.example.com/", external:true },
-  { img:"monolith", type:P("Production","Produção"), title:P("[Production] — stakeholder engagement","[Produção] — envolvimento de stakeholders"),
-    text:P("[Stakeholder map and institutional relations for a film or TV production.] Internal link example.","[Mapa de stakeholders e relações institucionais para uma produção de cinema ou televisão.] Exemplo de link interno."), href:"#/journal/where-culture-meets-institutions", external:false }
-];
 const POPUP = { enabled:true, img:"stairs", href:"https://www.example.com/", external:true };
 const CASES = [
   { slug:"santo-antonio-film-premiere-and-launch", img:"church", date:null,
@@ -1503,8 +1631,8 @@ const LEGAL = {
 
 /* ================= helpers ================= */
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const srcOf = (k, w) => k.startsWith("gal:") ? GALPH(k.split(":")[1], +k.split(":")[2]) : k.startsWith("photo:") ? PHOTOS[k.slice(6)] : k.startsWith("portrait:") ? PORTRAIT(k.slice(9)) : U(IMG[k], w);
-const toneOf = k => (k.startsWith("portrait:") || k.startsWith("photo:")) ? "tone-portrait" : k.startsWith("gal:") ? "tone-gal" : "tone";
+const srcOf = (k, w) => k.startsWith("mood:") ? MOOD[k.slice(5)] : k.startsWith("gal:") ? GALPH(k.split(":")[1], +k.split(":")[2]) : k.startsWith("photo:") ? PHOTOS[k.slice(6)] : k.startsWith("portrait:") ? PORTRAIT(k.slice(9)) : U(IMG[k], w);
+const toneOf = k => (k.startsWith("portrait:") || k.startsWith("photo:") || k.startsWith("mood:")) ? "tone-portrait" : k.startsWith("gal:") ? "tone-gal" : "tone";
 const img = (k, cls, alt, w, extra) => `<img src="${srcOf(k, w)}" alt="${esc(alt || "")}" class="${toneOf(k)} ${cls || ""}" loading="lazy" decoding="async" ${extra || ""}>`;
 const tName = x => L(x.name);
 const tImg = x => x.photo ? "photo:" + x.slug : "portrait:" + tName(x);
@@ -1541,10 +1669,15 @@ const pageHead = (title, intro) => `<div class="wrap page-head"><h1 class="page-
 const backLink = (href, label) => `<div class="wrap" style="padding-top:24px"><a class="link-caps back" href="${href}">${arrowL}${label}</a></div>`;
 const cta = (title, text, cls) => `<section class="cta ${cls || ""}"><h2>${title}</h2><p style="color:${cls === "light" ? "var(--clay-text)" : "var(--ash)"}">${text}</p><a class="btn ${cls === "light" ? "btn-dark" : "btn-line"}" href="#/contact">${t("cta_btn")}</a></section>`;
 const founderBlock = () => `<section class="founder" aria-labelledby="founder-t"><div class="wrap split">
-  ${img("portrait:João Belo", "", t("founder_alt"), 900)}
+  ${img("mood:founder", "", t("founder_alt"), 900)}
   <div class="txt"><h2 id="founder-t" class="label" style="color:var(--dust)">${t("founder_label")}</h2>
   <div><p class="name">João Belo</p><p class="role">${t("founder_role")}</p></div><span class="hr"></span>
   <p class="bio">${esc(t("founder_bio"))}</p></div></div></section>`;
+const areaPanels = () => `<section aria-labelledby="areas-p"><div class="wrap sec">
+  <div class="sec-head"><h2 id="areas-p" class="label">${t("areas_label")}</h2><span class="meta" lang="en">${M.c02}</span></div>
+  <ul class="panels">${[["Talent","#/talent","colfig","area_talent"],["Culture","#/culture","ballbooks","area_culture"],["Public Affairs","#/public-affairs","building","area_public"]]
+    .map(([n, h, k, d]) => `<li><a class="panel" href="${h}">${img(k, "", "", 1000)}<span class="p-txt"><span class="p-name" lang="en">${n}</span><span class="p-desc">${t(d)}</span><span class="p-go" aria-hidden="true">${arrowR}</span></span></a></li>`).join("")}</ul>
+</div></section>`;
 const areasBlock = (titleKey, headingTag) => `<section aria-labelledby="areas-t" style="border-bottom:1px solid var(--rule)"><div class="wrap sec">
   <div class="sec-head"><${headingTag} id="areas-t" class="label">${t(titleKey)}</${headingTag}><span class="meta" lang="en">${M.c02}</span></div>
   <div class="areas">
@@ -1556,7 +1689,6 @@ const areasBlock = (titleKey, headingTag) => `<section aria-labelledby="areas-t"
 /* ================= views ================= */
 const V = {};
 V.home = () => {
-  const [lead, ...rest] = JOURNAL.slice(0, 4);
   return `
 <section class="hero" aria-label="LIONS">
   <img src="${U(IMG.hero, 2400)}" alt="" class="tone" fetchpriority="high">
@@ -1568,7 +1700,6 @@ V.home = () => {
   <h2 lang="en">We represent culture,<br>we build impact.</h2><span class="rule" aria-hidden="true"></span>
   <p>${t("manifesto_p")}</p>
 </section>
-${areasBlock("areas_label", "h2")}
 <section aria-labelledby="h-talent"><div class="wrap sec">
   <div class="sec-head"><h2 id="h-talent" class="label" lang="en">Talent</h2>
     <div class="car-ctl"><button type="button" class="car-btn" data-car="-1" aria-controls="tal-track" aria-label="${t("prev_talent")}">${arrowL}</button><button type="button" class="car-btn" data-car="1" aria-controls="tal-track" aria-label="${t("next_talent")}">${arrowR}</button><a class="link-caps" href="#/talent">${t("view_all_talent")} ${arrowR}</a></div></div>
@@ -1576,7 +1707,8 @@ ${areasBlock("areas_label", "h2")}
     <ul class="car-track" id="tal-track">${(() => { const ph = TALENTS.filter(x => x.photo); return ph.map((x, i) => talentCard(x).replace("<li>", `<li aria-roledescription="slide" aria-label="${i + 1} ${t("slide_of")} ${ph.length}">`)).join(""); })()}</ul>
   </div>
 </div></section>
-${img("pillars", "", "", 2400, 'style="width:100%;height:clamp(240px,34vw,520px);object-fit:cover"')}
+${img("columns", "pause", "", 2400, 'style="width:100%;height:clamp(200px,26vw,400px);object-fit:cover"')}
+${areaPanels()}
 <section class="light" aria-labelledby="h-approach"><div class="wrap sec split">
   <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:26px;max-width:540px">
     <h2 id="h-approach" class="label" lang="en">Approach</h2>
@@ -1584,21 +1716,12 @@ ${img("pillars", "", "", 2400, 'style="width:100%;height:clamp(240px,34vw,520px)
     <p style="margin:0;font-size:17px;line-height:1.75;color:var(--clay-text)">${t("approach_sub")}</p>
     <a class="link-caps" href="#/approach" style="align-self:flex-start;border-bottom:1px solid var(--graphite)">${t("read_approach")}</a>
   </div>
-  ${img("stairs", "", "", 1600, 'style="flex:1 1 440px;width:100%;aspect-ratio:3/2;object-fit:cover"')}
+  ${img("ball", "", "", 1600, 'style="flex:1 1 440px;width:100%;aspect-ratio:16/9;object-fit:cover"')}
 </div></section>
 ${founderBlock()}
 <section aria-labelledby="h-journal"><div class="wrap sec">
   <div class="sec-head"><h2 id="h-journal" class="label" lang="en">Journal</h2><a class="link-caps" href="#/journal">${t("view_all_articles")} ${arrowR}</a></div>
-  <div class="j-home">
-    <a class="card j-lead" href="#/journal/${lead.slug}">
-      <span class="ph">${img(lead.img, "r-1610", "", 1600)}</span>
-      <span class="kicker">${esc(catOf(lead))}</span><span class="c-title">${titleOf(lead)}</span>
-      <span class="c-sum">${esc(L(lead.intro))}</span><span class="meta">${esc(fmtDate(lead.date))}</span>
-    </a>
-    <ul class="j-list">${rest.map(a => `<li><a class="j-row" href="#/journal/${a.slug}">
-      <span class="txt"><span class="kicker">${esc(catOf(a))}</span><span class="c-title">${titleOf(a)}</span><span class="meta">${esc(fmtDate(a.date))}</span></span>
-      ${img(a.img, "", "", 400)}</a></li>`).join("")}</ul>
-  </div>
+  <ul class="grid g-3 trio">${JOURNAL.slice(0, 3).map(journalCard).join("")}</ul>
 </div></section>
 <section aria-labelledby="h-cases" style="border-top:1px solid var(--rule)"><div class="wrap sec">
   <div class="sec-head"><h2 id="h-cases" class="label" lang="en">Culture</h2><a class="link-caps" href="#/culture">${t("view_all_cases")} ${arrowR}</a></div>
@@ -1643,12 +1766,13 @@ ${moment(M.c05, t("c05_note"))}
 </div></section>
 ${cta(t("cta_title"), t("cta_text"), "light")}`;
 
-V.publicAffairs = () => areaHero("Public Affairs", "marble", M.pa, t("public_phil"), t("public_fields")) + `
+V.publicAffairs = () => areaHero("Public Affairs", "building", M.pa, t("public_phil"), t("public_fields")) + `
 <section aria-labelledby="pa-t"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
   <h2 id="pa-t" class="label" style="flex:1 1 240px">${t("pa_intro_t")}</h2>
-  <div class="how" style="flex:3 1 560px;max-width:760px"><p>${t("pa_p1")}</p><p>${t("pa_p2")}</p><p class="principle">${t("pa_p3")}</p></div>
+  <div class="how" style="flex:3 1 460px;max-width:620px"><p>${t("pa_p1")}</p><p>${t("pa_p2")}</p><p class="principle">${t("pa_p3")}</p></div>
+  ${img("stone", "", "", 1200, 'style="flex:2 1 300px;width:100%;max-width:440px;aspect-ratio:4/5;object-fit:cover"')}
 </div></section>
-<section aria-labelledby="pw-t" style="border-top:1px solid var(--rule)"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
+<section aria-labelledby="pw-t"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
   <h2 id="pw-t" class="label" style="flex:1 1 240px">${t("public_what")}</h2>
   <dl class="roles" style="flex:3 1 560px">
     <div><dt lang="en">Institutional Relations</dt><dd>${t("pa_ir_d")}</dd></div>
@@ -1659,10 +1783,6 @@ V.publicAffairs = () => areaHero("Public Affairs", "marble", M.pa, t("public_phi
   </dl>
 </div></section>
 ${moment(M.c02, t("c02_note"))}
-<section aria-labelledby="psw-t"><div class="wrap sec">
-  <div class="sec-head"><h2 id="psw-t" class="label">${t("public_work")}</h2></div>
-  <ul class="grid g-3 trio">${PUBLIC.map(projCard).join("")}</ul>
-</div></section>
 ${cta(t("cta_title"), t("cta_text"))}`;
 
 const IG_ICON = `<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>`;
@@ -1849,10 +1969,9 @@ const buildIndex = () => [].concat(
   JOURNAL.map(a => ({ type:"Journal · " + catOf(a), title:L(a.title), text:L(a.intro), href:"#/journal/" + a.slug, img:a.img })),
   CULTURE.map(c => ({ type:t("type_case"), title:L(c.title), text:L(c.text), href:"#/culture", img:c.img })),
   CASES.map(c => ({ type:"Cases", title:L(c.title), text:L(c.intro), href:"#/cases/" + c.slug, img:c.img })),
-  PUBLIC.map(c => ({ type:t("type_ps"), title:L(c.title), text:L(c.text), href:"#/public-affairs", img:c.img })),
   [{ type:t("type_page"), title:"Talent", text:t("talent_phil"), href:"#/talent", img:"pillars" },
    { type:t("type_page"), title:"Culture", text:t("culture_phil"), href:"#/culture", img:"gallery" },
-   { type:t("type_page"), title:"Public Affairs", text:t("public_phil"), href:"#/public-affairs", img:"marble" },
+   { type:t("type_page"), title:"Public Affairs", text:t("public_phil"), href:"#/public-affairs", img:"building" },
    { type:t("type_page"), title:"Approach", text:t("approach_intro"), href:"#/approach", img:"darkroom" },
    { type:t("type_page"), title:t("contact_title"), text:t("contact_intro"), href:"#/contact", img:"upward" }]
 );
@@ -1901,9 +2020,25 @@ function applyStatic(){
   if (md) md.setAttribute("content", t("f_about"));
   const gs = document.getElementById("gateShow");
   if (gs) gs.textContent = gs.getAttribute("aria-pressed") === "true" ? t("gate_hide") : t("gate_show");
+  if (typeof syncTheme === "function") syncTheme();
   const cc = document.getElementById("ckCustom");
   if (cc) cc.textContent = document.getElementById("cookieOpts").hidden ? t("ck_choose") : t("ck_hide");
 }
+
+/* footer wordmark: scale "LIONS" to the full width with whatever font is loaded */
+function fitWordmark(){
+  const svg = document.querySelector(".fx-word svg"), tx = svg && svg.querySelector("text"); if (!tx) return;
+  tx.setAttribute("font-size", "200"); tx.style.fontSize = "200px";
+  const w = tx.getComputedTextLength(); if (!w) return;
+  const fs = 200 * 1000 / w, cap = fs * 0.72;
+  tx.style.fontSize = fs + "px"; tx.setAttribute("x", "0"); tx.setAttribute("y", String(cap));
+  svg.setAttribute("viewBox", "0 -4 1000 " + (cap + 8).toFixed(1));
+}
+fitWordmark();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitWordmark);
+/* header: fixed on every page, transparent over image heroes, translucent once the page scrolls */
+function updateHeader(){ header.classList.toggle("is-stuck", window.scrollY > 8); }
+window.addEventListener("scroll", () => requestAnimationFrame(updateHeader), { passive:true });
 
 /* ================= router ================= */
 const app = document.getElementById("app");
@@ -1937,6 +2072,8 @@ function route(){
   app.innerHTML = html;
   document.title = title ? title + " — LIONS" : "LIONS — " + CLAIM;
   header.classList.toggle("overlay", key === "home" || key === "talent" && (!parts[1] || (tBySlug(parts[1]) || {}).hero === "full") || key === "culture" || key === "public");
+  document.body.classList.toggle("hdr-over", header.classList.contains("overlay"));
+  updateHeader();
   if (key === "home") bindCarousel();
   document.querySelectorAll("[data-key]").forEach(a => a.getAttribute("data-key") === key ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
   if (!route.keepFocus) closeMenu(false);
@@ -2007,7 +2144,7 @@ panel.addEventListener("keydown", e => {
   if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
   else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
 });
-window.addEventListener("resize", () => { if (window.innerWidth > 1180) closeMenu(false); });
+
 
 /* contact form */
 function bindContact(){
@@ -2127,6 +2264,7 @@ function unlock(){
   gate.remove();
   document.body.classList.remove("locked");
   unlocked = true;
+  fitWordmark();
   showCookie();
   route();
 }
@@ -2142,6 +2280,7 @@ gForm.addEventListener("submit", e => {
   gForm.classList.remove("shake"); void gForm.offsetWidth; gForm.classList.add("shake");
 });
 
+document.querySelectorAll("[data-mood]").forEach(i => { i.src = MOOD[i.dataset.mood]; });
 applyStatic();
 let remembered = false;
 try { remembered = sessionStorage.getItem("lions-preview") === GATE_HASH; } catch(e){}
