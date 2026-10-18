@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LIONS — Wireframe</title>
-<meta name="description" content="LIONS is a Lisbon-based agency for talent management, cultural projects and public strategy, representing actors, documentary filmmakers and creators, and advising institutions, brands and projects.">
+<meta name="description" content="LIONS is a Lisbon-based agency for talent management, cultural projects and public affairs, representing actors, journalists, athletes and creators, and building bridges with institutions.">
 <!--
   LIONS — WIREFRAME (5D MVP) · version after kick-off · same structure and copy as the prototype, greyscale, image placeholders
   Bilingual EN / PT (EN by default). Claims and manifesto lines always stay in English.
@@ -14,7 +14,7 @@
 -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"LIONS","legalName":"LIONS PARTNERS, UNIPESSOAL LDA",
-"description":"Lisbon-based agency for talent management, cultural projects and public strategy.",
+"description":"Lisbon-based agency working across Talent, Culture and Public Affairs.",
 "email":"info@[domain to be confirmed]","url":"https://[domain to be confirmed]",
 "address":{"@type":"PostalAddress","streetAddress":"Rua Castilho 39, 13.º C","postalCode":"1250-068","addressLocality":"Lisboa","addressCountry":"PT"},
 "founder":{"@type":"Person","name":"João Belo"},
@@ -373,6 +373,7 @@ mark{background:transparent;color:var(--accent)}
 .area-hero h1{text-align:left;font-size:clamp(48px,9vw,128px);font-weight:200;letter-spacing:.04em;opacity:1;animation:none}
 .area-hero .slogan{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1.25;letter-spacing:0;text-transform:none;text-align:left;color:#fff;opacity:1;animation:none}
 .area-hero .phil{margin:0;max-width:40em;font-size:18px;line-height:1.75;letter-spacing:0;text-transform:none;text-align:left;color:#EDE7E0;opacity:1;animation:none;font-weight:400}
+.area-hero .fields{margin-top:6px;letter-spacing:.14em;line-height:1.9;color:#EDE7E0}
 .area-hero .eyebrow{margin:0;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#F0DFCF;text-align:left;opacity:1;animation:none}
 .areas a.more{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:10px 0}
 .svc{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
@@ -822,7 +823,7 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
       <button type="button" data-lang="en" lang="en" aria-label="English">EN</button><span class="sep" aria-hidden="true">|</span><button type="button" data-lang="pt" lang="pt-PT" aria-label="Português">PT</button>
     </div>
     <h1 id="gateTitle">LIONS</h1>
-    <p class="tag" lang="en" data-claim>Talent · Culture · Public Strategy</p>
+    <p class="tag" lang="en" data-claim>Talent · Culture · Public Affairs</p>
     <p class="note" data-i18n="gate_note"></p>
     <div class="field">
       <label for="gatePw" data-i18n="gate_pw"></label>
@@ -845,7 +846,7 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
       <nav class="nav" data-i18n-aria="navMain">
         <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
         <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
-        <a href="#/public-strategy" data-key="public" data-i18n="nav_public"></a>
+        <a href="#/public-affairs" data-key="public" data-i18n="nav_public"></a>
         <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
         <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
         <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
@@ -871,7 +872,7 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
   <nav data-i18n-aria="navMobile">
     <a href="#/talent" data-key="talent" data-i18n="nav_talent"></a>
     <a href="#/culture" data-key="culture" data-i18n="nav_culture"></a>
-    <a href="#/public-strategy" data-key="public" data-i18n="nav_public"></a>
+    <a href="#/public-affairs" data-key="public" data-i18n="nav_public"></a>
     <a href="#/approach" data-key="approach" data-i18n="nav_approach"></a>
     <a href="#/journal" data-key="journal" data-i18n="nav_journal"></a>
     <a href="#/contact" data-key="contact" data-i18n="nav_contact"></a>
@@ -898,7 +899,7 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
     <div class="f-top">
       <div class="f-brand">
         <a class="f-word" href="#/" data-i18n-aria="home">LIONS</a>
-        <span class="f-tag" lang="en" data-claim>Talent · Culture · Public Strategy</span>
+        <span class="f-tag" lang="en" data-claim>Talent · Culture · Public Affairs</span>
         <p class="f-about" data-i18n="f_about"></p>
         <a class="link-caps" href="#/contact" style="border-bottom:1px solid var(--line);padding-bottom:10px"><span data-i18n="cta_btn"></span> <svg aria-hidden="true" width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 5h13M9 1l4 4-4 4"/></svg></a>
       </div>
@@ -908,7 +909,7 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
           <ul class="f-list">
             <li><a href="#/talent" data-i18n="nav_talent"></a></li>
             <li><a href="#/culture" data-i18n="nav_culture"></a></li>
-            <li><a href="#/public-strategy" data-i18n="nav_public"></a></li>
+            <li><a href="#/public-affairs" data-i18n="nav_public"></a></li>
             <li><a href="#/approach" data-i18n="nav_approach"></a></li>
             <li><a href="#/journal" data-i18n="nav_journal"></a></li>
             <li><a href="#/cases" data-i18n="nav_cases"></a></li>
@@ -1029,7 +1030,7 @@ const REV = "[Tradução a rever]";
 const P = (en, pt) => ({ en, pt });
 
 /* Claims and manifesto lines: always in English, in both languages */
-const CLAIM = "Talent · Culture · Public Strategy";
+const CLAIM = "Talent · Culture · Public Affairs";
 /* Claims & Manifesto (client list). Always in English, also in the PT version. */
 const M = {
   c01: "We represent culture, we build impact.",
@@ -1038,7 +1039,8 @@ const M = {
   c04: "Curated talent, strategic vision.",
   c05: "We move culture forward.",
   c06: "Time. Space. Influence.",
-  c07: "LIONS doesn’t represent more. We represent better."
+  c07: "LIONS doesn’t represent more. We represent better.",
+  pa: "Where culture meets institutions."
 };
 const moment = (claim, note, cls) => `<section class="moment ${cls || "light"}" aria-label="${esc(claim)}"><blockquote lang="en">${claim}</blockquote>${note ? `<p>${note}</p>` : ""}</section>`;
 const en = s => `<span lang="en">${s}</span>`;
@@ -1047,7 +1049,7 @@ const T = {
 en: {
   skip:"Skip to content", home:"LIONS, homepage", navMain:"Main", navMobile:"Mobile", menu:"Menu", closeMenu:"Close menu", openSearch:"Search the site", langGroup:"Language",
   nav_talent:"Talent", nav_approach:"Approach", nav_journal:"Journal", nav_cases:"Cases", nav_contact:"Contact", nav_search:"Search",
-  nav_culture:"Culture", nav_public:"Public Strategy", social:"Social media",
+  nav_culture:"Culture", nav_public:"Public Affairs", social:"Social media",
   discover:"Discover", area_label:"Area",
   talent_phil:"We represent a small number of actors, journalists, athletes and creators, and we stay with them for the long term. Every career has one plan, one strategist and a clear idea of what it should look like in five years.",
   roster:"Roster", roster_intro:"Each name on this page has a dedicated strategist and a team behind them. That is why the list is short.",
@@ -1059,14 +1061,20 @@ en: {
   cw_visits:"Visits and partnerships", cw_visits_d:"Programmes for international guests and public figures in Portugal, and partnerships between culture and brands.",
   projects:"Projects", projects_intro:"A selection of cultural projects. Each card opens the project’s own page or a related article.",
   ext:"External link", internal:"Read more",
-  public_phil:"Institutions, brands and projects are judged by how clearly they explain themselves. We build public positioning that is coherent, credible and sustained over time, so that what you do is understood, not just seen.",
-  public_what:"What we do",
-  ps_pos:"Positioning and narrative", ps_pos_d:"Defining what an institution, brand or project stands for, and how to say it in public.",
-  ps_comm:"Strategic communication", ps_comm_d:"Communication plans, key messages and calendars aligned with the organisation’s goals.",
-  ps_voice:"Public presence and spokespeople", ps_voice_d:"Preparation of leaders and spokespeople for interviews, panels and public moments.",
-  ps_rep:"Reputation and stakeholders", ps_rep_d:"Relations with press, partners and institutions, and support in sensitive moments.",
+  public_phil:"Connecting talent, culture and brands with institutions, public stakeholders and the wider political landscape through strategic communication and institutional relations.",
+  public_fields:"Institutional Relations · Cultural Partnerships · Stakeholder Engagement · Public Positioning",
+  pa_intro_t:"Our approach",
+  pa_p1:"LIONS develops institutional relations strategies for projects connected to culture, talent and entertainment, building bridges between the creative world, brands and public institutions.",
+  pa_p2:"We shape the institutional positioning of events, festivals, productions and cultural initiatives, identifying opportunities for collaboration, developing partnerships and fostering meaningful relationships between everyone involved.",
+  pa_p3:"An approach of our own, rooted in culture, talent and entertainment.",
+  public_what:"Areas of practice",
+  pa_ir_d:"Relationships with public entities, municipalities and cultural institutions, built over time and grounded in shared goals.",
+  pa_cp_d:"Partnerships that bring together cultural projects, brands, talent and public entities around initiatives that matter.",
+  pa_se_d:"Mapping who matters to each project and creating the right moments to bring them together.",
+  pa_pp_d:"The institutional positioning of events, festivals, productions and cultural initiatives.",
+  pa_sc_d:"Messages, timing and narrative aligned with the project’s goals and with each of its audiences.",
   public_work:"Selected work",
-  nl_title:"Newsletter", nl_text:"Occasional news from LIONS: talent, culture and public strategy. No noise.",
+  nl_title:"Newsletter", nl_text:"Occasional news from LIONS: talent, culture and public affairs. No noise.",
   nl_label:"Email address for the newsletter", nl_ph:"Your email address", nl_btn:"Subscribe",
   nl_note:"By subscribing you agree to receive emails from LIONS, as described in the <a href=\"#/privacy\">privacy policy</a>. You can unsubscribe at any time.",
   nl_ok:"Thank you. Please confirm your subscription in the email we have just sent you. [Integration with the newsletter platform to be configured.]",
@@ -1076,7 +1084,7 @@ en: {
   areas_label:"Three areas",
   area_talent:"Representation and long-term career strategy for a small roster of actors, journalists, athletes and creators.",
   area_culture:"Films, festivals, cultural projects and institutions: communication that respects the work and finds its audience.",
-  area_public:"Strategic communication and public positioning for institutions, brands and projects.",
+  area_public:"Institutional relations and cultural partnerships: bridges between culture, talent, brands and public institutions.",
   view_all_talent:"View all talent",
   approach_label:"Approach",
   approach_lead:"LIONS works for people and projects who want to be understood, not just seen.",
@@ -1087,7 +1095,7 @@ en: {
   founder_alt:"Portrait of João Belo, founder of LIONS (placeholder)",
   journal_label:"Journal", view_all_articles:"View all articles",
   cases_label:"Culture", view_all_cases:"View all projects",
-  cta_title:"Start a conversation", cta_text:"For talent, cultural projects and public strategy, write to us. Every message is read by the team.", cta_btn:"Contact the agency",
+  cta_title:"Start a conversation", cta_text:"For talent, cultural projects and public affairs, write to us. Every message is read by the team.", cta_btn:"Contact the agency",
   talent_title:"Talent", talent_intro:"Actors, journalists, athletes and creators. A deliberately small roster, so each career gets the attention it deserves.",
   all_talent:"All talent", portrait_of:"Portrait of", portrait_cap:"PORTRAIT TO BE SUPPLIED",
   selected_work:"Selected work", online:"Online", online_text:"Official channels. For bookings and partnerships, please contact LIONS.",
@@ -1118,12 +1126,12 @@ en: {
   by:"By", play_video:"Play video", original_post:"Original post", external_link:"External link", download:"Download (PDF, [size])",
   cr_words:"Words", cr_photo:"Photography", cr_video:"Video", cr_client:"Client", cr_project:"Project", cr_comm:"Communication",
   featured_talent:"Talent featured", talent_tbd:"[Talent to be confirmed]", talent_tbd_area:"Link to be set in the back office",
-  cases_title:"Cases", cases_intro:"Campaigns, cultural projects and public strategy work, and what came of them.",
+  cases_title:"Cases", cases_intro:"Campaigns, cultural projects and public affairs work, and what came of them.",
   ch_context:"Context", ch_challenge:"Challenge", ch_approach:"Approach", ch_results:"Results",
-  contact_title:"Contact", contact_intro:"For talent, cultural projects and public strategy. Tell us who you would like to work with and what you have in mind.",
+  contact_title:"Contact", contact_intro:"For talent, cultural projects and public affairs. Tell us who you would like to work with and what you have in mind.",
   send_message:"Send a message", required:"(required)", form_note:"All fields are required.",
   f_name:"Name", f_email:"Email", f_subject:"Subject", f_message:"Message",
-  subjects:["Talent","Cultural project","Public strategy","Press","Something else"],
+  subjects:["Talent","Cultural project","Public Affairs","Press","Something else"],
   consent:"I agree that LIONS may use these details to reply to my message, as described in the <a href=\"#/privacy\">privacy policy</a>.",
   e_name:"Enter your name.", e_email:"Enter an email address like name@example.com.", e_message:"Write a short message so we know how to help.", e_consent:"Accept the privacy policy so we can reply.",
   send:"Send message", sent_title:"Message sent.", sent_text:"Thank you, {name}. We will reply to {email}.", again:"Send another message",
@@ -1131,13 +1139,13 @@ en: {
   search_title:"Search", search_ph:"Search talent, articles and cases", clear:"Clear search",
   s_type:"Type a word to search talent, articles and cases.", s_one:"1 result for", s_many:"results for", s_none:"No results",
   s_nomatch:"Nothing matches “{q}”. Check the spelling, try a talent’s name, or browse the sections below.",
-  type_talent:"Talent", type_case:"Culture", type_ps:"Public Strategy", type_page:"Page",
+  type_talent:"Talent", type_case:"Culture", type_ps:"Public Affairs", type_page:"Page",
   nf_eyebrow:"Error 404", nf_title:"This page doesn’t exist", nf_text:"The link may be out of date, or the address mistyped. Go back to the homepage, or search for what you were looking for.", nf_home:"Go to the homepage", nf_search:"Search the site",
   cookie_region:"Cookie consent",
   cookie_text:"We use cookies to measure visits and improve the site. Analytics cookies only run if you accept them. <a href=\"#/privacy\">Read the privacy policy</a>.",
   ck_essential:"Essential cookies (always on)", ck_analytics:"Analytics (Google Analytics via Tag Manager)", ck_save:"Save choices", ck_all:"Accept all", ck_ess:"Essential only", ck_choose:"Choose", ck_hide:"Hide options",
   f_explore:"Explore", f_contact:"Contact", f_follow:"Follow",
-  f_about:"LIONS is a Lisbon-based agency working across three areas: Talent, Culture and Public Strategy. We represent actors, journalists, athletes and creators, and advise institutions, brands and projects on how they are seen and understood.",
+  f_about:"LIONS is a Lisbon-based agency working across three areas: Talent, Culture and Public Affairs. We represent actors, journalists, athletes and creators, and build bridges between culture, brands and public institutions.",
   f_copy:"© 2026 LIONS PARTNERS, UNIPESSOAL LDA. All rights reserved.",
   privacy:"Privacy policy", terms:"Legal terms", cookie_settings:"Cookie settings", back_top:"Back to top", developed:"Developed by", developed_aria:"Developed by LOBA (opens in a new tab)",
   gate_note:"Private preview of the new LIONS website. Enter the password to continue.", gate_pw:"Password", gate_show:"Show", gate_hide:"Hide", gate_err:"That password is not correct. Check it and try again.", gate_enter:"Enter",
@@ -1149,7 +1157,7 @@ en: {
 pt: {
   skip:"Saltar para o conteúdo", home:"LIONS, página inicial", navMain:"Principal", navMobile:"Navegação", menu:"Menu", closeMenu:"Fechar menu", openSearch:"Pesquisar no site", langGroup:"Idioma",
   nav_talent:"Talent", nav_approach:"Approach", nav_journal:"Journal", nav_cases:"Cases", nav_contact:"Contacto", nav_search:"Pesquisa",
-  nav_culture:"Culture", nav_public:"Public Strategy", social:"Redes sociais",
+  nav_culture:"Culture", nav_public:"Public Affairs", social:"Redes sociais",
   discover:"Descobrir", area_label:"Área",
   talent_phil:"Representamos um número reduzido de atores, jornalistas, atletas e criadores, e acompanhamo-los a longo prazo. Cada carreira tem um plano, um estratega e uma ideia clara do que deve ser daqui a cinco anos.",
   roster:"Talentos", roster_intro:"Cada nome nesta página tem um estratega dedicado e uma equipa por trás. É por isso que a lista é curta.",
@@ -1161,14 +1169,20 @@ pt: {
   cw_visits:"Visitas e parcerias", cw_visits_d:"Programas para convidados internacionais e figuras públicas em Portugal, e parcerias entre cultura e marcas.",
   projects:"Projetos", projects_intro:"Uma seleção de projetos culturais. Cada card abre a página do próprio projeto ou um artigo relacionado.",
   ext:"Link externo", internal:"Ler mais",
-  public_phil:"Instituições, marcas e projetos são avaliados pela clareza com que se explicam. Construímos posicionamentos públicos coerentes, credíveis e sustentados no tempo, para que o que fazem seja compreendido, e não apenas visto.",
-  public_what:"O que fazemos",
-  ps_pos:"Posicionamento e narrativa", ps_pos_d:"Definir o que uma instituição, marca ou projeto defende, e como o dizer em público.",
-  ps_comm:"Comunicação estratégica", ps_comm_d:"Planos de comunicação, mensagens-chave e calendários alinhados com os objetivos da organização.",
-  ps_voice:"Presença pública e porta-vozes", ps_voice_d:"Preparação de líderes e porta-vozes para entrevistas, painéis e momentos públicos.",
-  ps_rep:"Reputação e stakeholders", ps_rep_d:"Relação com imprensa, parceiros e instituições, e apoio em momentos sensíveis.",
+  public_phil:"Ligamos talento, cultura e marcas às instituições, aos stakeholders públicos e ao panorama político em geral, através de comunicação estratégica e de relações institucionais.",
+  public_fields:"Institutional Relations · Cultural Partnerships · Stakeholder Engagement · Public Positioning",
+  pa_intro_t:"A nossa abordagem",
+  pa_p1:"A LIONS desenvolve estratégias de relações institucionais para projetos ligados à cultura, ao talento e ao entretenimento, criando pontes entre o universo criativo, as marcas e as instituições públicas.",
+  pa_p2:"Trabalhamos o posicionamento institucional de eventos, festivais, produções e iniciativas culturais, identificando oportunidades de colaboração, desenvolvendo parcerias e promovendo relações relevantes entre os diferentes intervenientes.",
+  pa_p3:"Uma abordagem muito própria, ligada à cultura, ao talento e ao entretenimento.",
+  public_what:"Áreas de atuação",
+  pa_ir_d:"Relação com entidades públicas, autarquias e instituições culturais, construída no tempo e assente em objetivos comuns.",
+  pa_cp_d:"Parcerias que juntam projetos culturais, marcas, talentos e entidades públicas em torno de iniciativas relevantes.",
+  pa_se_d:"Identificar quem é relevante para cada projeto e criar os momentos certos para os aproximar.",
+  pa_pp_d:"O posicionamento institucional de eventos, festivais, produções e iniciativas culturais.",
+  pa_sc_d:"Mensagens, calendário e narrativa alinhados com os objetivos do projeto e com cada um dos seus públicos.",
   public_work:"Trabalhos selecionados",
-  nl_title:"Newsletter", nl_text:"Notícias ocasionais da LIONS: talento, cultura e estratégia pública. Sem ruído.",
+  nl_title:"Newsletter", nl_text:"Notícias ocasionais da LIONS: talento, cultura e public affairs. Sem ruído.",
   nl_label:"Email para a newsletter", nl_ph:"O seu email", nl_btn:"Subscrever",
   nl_note:"Ao subscrever aceita receber emails da LIONS, nos termos da <a href=\"#/privacy\">política de privacidade</a>. Pode cancelar a qualquer momento.",
   nl_ok:"Obrigado. Confirme a subscrição no email que acabámos de enviar. [Integração com a plataforma de newsletter a configurar.]",
@@ -1178,7 +1192,7 @@ pt: {
   areas_label:"Três áreas",
   area_talent:"Representação e estratégia de carreira a longo prazo para um grupo restrito de atores, jornalistas, atletas e criadores.",
   area_culture:"Filmes, festivais, projetos e instituições culturais: comunicação que respeita a obra e encontra o seu público.",
-  area_public:"Comunicação estratégica e posicionamento público para instituições, marcas e projetos.",
+  area_public:"Relações institucionais e parcerias culturais: pontes entre cultura, talento, marcas e instituições públicas.",
   view_all_talent:"Ver todos os talentos",
   approach_label:"Approach",
   approach_lead:"A LIONS trabalha para pessoas e projetos que querem ser compreendidos, e não apenas vistos.",
@@ -1189,7 +1203,7 @@ pt: {
   founder_alt:"Retrato de João Belo, fundador da LIONS (imagem provisória)",
   journal_label:"Journal", view_all_articles:"Ver todos os artigos",
   cases_label:"Culture", view_all_cases:"Ver todos os projetos",
-  cta_title:"Vamos conversar", cta_text:"Para talento, projetos culturais e estratégia pública, escreva-nos. Todas as mensagens são lidas pela equipa.", cta_btn:"Contactar a agência",
+  cta_title:"Vamos conversar", cta_text:"Para talento, projetos culturais e public affairs, escreva-nos. Todas as mensagens são lidas pela equipa.", cta_btn:"Contactar a agência",
   talent_title:"Talent", talent_intro:"Atores, jornalistas, atletas e criadores. Um grupo deliberadamente restrito, para que cada carreira tenha a atenção que merece.",
   all_talent:"Todos os talentos", portrait_of:"Retrato de", portrait_cap:"RETRATO A FORNECER",
   selected_work:"Trabalhos selecionados", online:"Online", online_text:"Canais oficiais. Para contratações e parcerias, contacte a LIONS.",
@@ -1220,12 +1234,12 @@ pt: {
   by:"Por", play_video:"Ver vídeo", original_post:"Publicação original", external_link:"Link externo", download:"Descarregar (PDF, [tamanho])",
   cr_words:"Texto", cr_photo:"Fotografia", cr_video:"Vídeo", cr_client:"Cliente", cr_project:"Projeto", cr_comm:"Comunicação",
   featured_talent:"Talento em destaque", talent_tbd:"[Talento a confirmar]", talent_tbd_area:"Ligação a definir no back office",
-  cases_title:"Cases", cases_intro:"Campanhas, projetos culturais e trabalho de estratégia pública, e o que deles resultou.",
+  cases_title:"Cases", cases_intro:"Campanhas, projetos culturais e trabalho de public affairs, e o que deles resultou.",
   ch_context:"Contexto", ch_challenge:"Desafio", ch_approach:"Abordagem", ch_results:"Resultados",
-  contact_title:"Contacto", contact_intro:"Para talento, projetos culturais e estratégia pública. Diga-nos com quem gostaria de trabalhar e o que tem em mente.",
+  contact_title:"Contacto", contact_intro:"Para talento, projetos culturais e public affairs. Diga-nos com quem gostaria de trabalhar e o que tem em mente.",
   send_message:"Enviar mensagem", required:"(obrigatório)", form_note:"Todos os campos são obrigatórios.",
   f_name:"Nome", f_email:"Email", f_subject:"Assunto", f_message:"Mensagem",
-  subjects:["Talento","Projeto cultural","Estratégia pública","Imprensa","Outro assunto"],
+  subjects:["Talento","Projeto cultural","Public Affairs","Imprensa","Outro assunto"],
   consent:"Aceito que a LIONS utilize estes dados para responder à minha mensagem, nos termos da <a href=\"#/privacy\">política de privacidade</a>.",
   e_name:"Indique o seu nome.", e_email:"Indique um email válido, por exemplo nome@exemplo.pt.", e_message:"Escreva uma mensagem curta para sabermos como ajudar.", e_consent:"Aceite a política de privacidade para podermos responder.",
   send:"Enviar mensagem", sent_title:"Mensagem enviada.", sent_text:"Obrigado, {name}. Vamos responder para {email}.", again:"Enviar outra mensagem",
@@ -1233,13 +1247,13 @@ pt: {
   search_title:"Pesquisa", search_ph:"Pesquisar talentos, artigos e cases", clear:"Limpar pesquisa",
   s_type:"Escreva uma palavra para pesquisar talentos, artigos e cases.", s_one:"1 resultado para", s_many:"resultados para", s_none:"Sem resultados",
   s_nomatch:"Nada corresponde a “{q}”. Verifique a ortografia, experimente o nome de um talento ou explore as secções abaixo.",
-  type_talent:"Talento", type_case:"Culture", type_ps:"Public Strategy", type_page:"Página",
+  type_talent:"Talento", type_case:"Culture", type_ps:"Public Affairs", type_page:"Página",
   nf_eyebrow:"Erro 404", nf_title:"Esta página não existe", nf_text:"O link pode estar desatualizado ou o endereço pode ter sido mal escrito. Volte à página inicial ou pesquise o que procurava.", nf_home:"Ir para a página inicial", nf_search:"Pesquisar no site",
   cookie_region:"Consentimento de cookies",
   cookie_text:"Usamos cookies para medir visitas e melhorar o site. Os cookies de análise só são ativados se os aceitar. <a href=\"#/privacy\">Ler a política de privacidade</a>.",
   ck_essential:"Cookies essenciais (sempre ativos)", ck_analytics:"Análise (Google Analytics via Tag Manager)", ck_save:"Guardar escolhas", ck_all:"Aceitar todos", ck_ess:"Só essenciais", ck_choose:"Escolher", ck_hide:"Ocultar opções",
   f_explore:"Explorar", f_contact:"Contacto", f_follow:"Seguir",
-  f_about:"A LIONS é uma agência sediada em Lisboa que trabalha em três áreas: Talent, Culture e Public Strategy. Representamos atores, jornalistas, atletas e criadores, e aconselhamos instituições, marcas e projetos sobre a forma como são vistos e compreendidos.",
+  f_about:"A LIONS é uma agência sediada em Lisboa que trabalha em três áreas: Talent, Culture e Public Affairs. Representamos atores, jornalistas, atletas e criadores, e criamos pontes entre a cultura, as marcas e as instituições públicas.",
   f_copy:"© 2026 LIONS PARTNERS, UNIPESSOAL LDA. Todos os direitos reservados.",
   privacy:"Política de privacidade", terms:"Termos legais", cookie_settings:"Definições de cookies", back_top:"Voltar ao topo", developed:"Desenvolvido por", developed_aria:"Desenvolvido pela LOBA (abre num novo separador)",
   gate_note:"Pré-visualização privada do novo site da LIONS. Introduza a password para continuar.", gate_pw:"Password", gate_show:"Mostrar", gate_hide:"Ocultar", gate_err:"A password não está correta. Verifique e tente novamente.", gate_enter:"Entrar",
@@ -1401,8 +1415,8 @@ const JOURNAL = [
     title:P("[Talent] at [Event]","[Talento] em [Evento]"),
     intro:P("[Short note on the talent’s participation in the event.]","[Nota curta sobre a participação do talento no evento.]"),
     body:[P("[Highlight text to be supplied by LIONS.]","[Texto do destaque a fornecer pela LIONS.]")], link:true },
-  { slug:"public-strategy-for-cultural-institutions", type:"culture", date:"2025-11-25", img:"building",
-    title:P("Public strategy for cultural institutions","Estratégia pública para instituições culturais"),
+  { slug:"where-culture-meets-institutions", type:"culture", date:"2025-11-25", img:"building",
+    title:P("Where culture meets institutions","Where culture meets institutions"), titleEn:true,
     intro:P("Institutions are judged by how clearly they explain themselves. A note on positioning in public.","As instituições são avaliadas pela clareza com que se explicam. Uma nota sobre posicionamento público."),
     body:[P("Museums, festivals and foundations compete for the same attention as brands, with fewer resources and higher expectations.","Museus, festivais e fundações disputam a mesma atenção que as marcas, com menos recursos e expectativas mais altas."),
           P("[Text to be supplied.]","[Texto a fornecer.]")] }
@@ -1429,12 +1443,12 @@ const CULTURE = [
     href:"#/journal/cultural-project-premiere-notes", external:false }
 ];
 const PUBLIC = [
-  { img:"building", type:P("Institution","Instituição"), title:P("[Institution] — repositioning","[Instituição] — reposicionamento"),
-    text:P("[Public positioning and strategic communication for a new cycle.]","[Posicionamento público e comunicação estratégica para um novo ciclo.]"), href:"https://www.example.com/", external:true },
-  { img:"geometric", type:P("Brand","Marca"), title:P("[Brand] — public narrative","[Marca] — narrativa pública"),
-    text:P("[Narrative and spokesperson preparation for a brand’s public moment.]","[Narrativa e preparação de porta-vozes para um momento público da marca.]"), href:"https://www.example.com/", external:true },
-  { img:"monolith", type:P("Project","Projeto"), title:P("[Project] — launch","[Projeto] — lançamento"),
-    text:P("[Stakeholder map and launch communication for a public-interest project.] Internal link example.","[Mapa de stakeholders e comunicação de lançamento de um projeto de interesse público.] Exemplo de link interno."), href:"#/journal/public-strategy-for-cultural-institutions", external:false }
+  { img:"building", type:P("Festival","Festival"), title:P("[Festival] — institutional positioning","[Festival] — posicionamento institucional"),
+    text:P("[Institutional positioning and relations with public partners for a festival edition.]","[Posicionamento institucional e relação com parceiros públicos para uma edição do festival.]"), href:"https://www.example.com/", external:true },
+  { img:"geometric", type:P("Cultural partnership","Parceria cultural"), title:P("[Brand] × [Public entity]","[Marca] × [Entidade pública]"),
+    text:P("[A partnership between a brand, a cultural project and a public entity.]","[Uma parceria entre uma marca, um projeto cultural e uma entidade pública.]"), href:"https://www.example.com/", external:true },
+  { img:"monolith", type:P("Production","Produção"), title:P("[Production] — stakeholder engagement","[Produção] — envolvimento de stakeholders"),
+    text:P("[Stakeholder map and institutional relations for a film or TV production.] Internal link example.","[Mapa de stakeholders e relações institucionais para uma produção de cinema ou televisão.] Exemplo de link interno."), href:"#/journal/where-culture-meets-institutions", external:false }
 ];
 const POPUP = { enabled:true, img:"stairs", href:"https://www.example.com/", external:true };
 const CASES = [
@@ -1455,7 +1469,7 @@ const CASES = [
     ch:[["ch_context",P("[Context to be supplied.]","[Contexto a fornecer.]")],["ch_challenge",P("[Challenge to be supplied.]","[Desafio a fornecer.]")],["ch_approach",P("[Approach to be supplied.]","[Abordagem a fornecer.]")],["ch_results",P("[Results to be supplied.]","[Resultados a fornecer.]")]],
     credits:[["cr_client","[Brand]"],["cr_comm","LIONS"]] },
   { slug:"repositioning-a-cultural-institution", img:"building", date:"2025-11-01",
-    label:P("[Institution] · Public strategy","[Instituição] · Estratégia pública"),
+    label:P("[Institution] · Public Affairs","[Instituição] · Public Affairs"),
     title:P("Repositioning a cultural institution","Reposicionar uma instituição cultural"),
     intro:P("Public positioning and strategic communication for an institution preparing a new cycle.","Posicionamento público e comunicação estratégica para uma instituição a preparar um novo ciclo."),
     ch:[["ch_context",P("[Context to be supplied.]","[Contexto a fornecer.]")],["ch_challenge",P("[Challenge to be supplied.]","[Desafio a fornecer.]")],["ch_approach",P("[Approach to be supplied.]","[Abordagem a fornecer.]")],["ch_results",P("[Results to be supplied.]","[Resultados a fornecer.]")]],
@@ -1536,7 +1550,7 @@ const areasBlock = (titleKey, headingTag) => `<section aria-labelledby="areas-t"
   <div class="areas">
     <div><h3 lang="en">Talent</h3><p>${t("area_talent")}</p><a class="more" href="#/talent">${t("discover")} <span class="sr-only">Talent</span> ${arrowR}</a></div>
     <div><h3 lang="en">Culture</h3><p>${t("area_culture")}</p><a class="more" href="#/culture">${t("discover")} <span class="sr-only">Culture</span> ${arrowR}</a></div>
-    <div><h3 lang="en">Public Strategy</h3><p>${t("area_public")}</p><a class="more" href="#/public-strategy">${t("discover")} <span class="sr-only">Public Strategy</span> ${arrowR}</a></div>
+    <div><h3 lang="en">Public Affairs</h3><p>${t("area_public")}</p><a class="more" href="#/public-affairs">${t("discover")} <span class="sr-only">Public Affairs</span> ${arrowR}</a></div>
   </div></div></section>`;
 
 /* ================= views ================= */
@@ -1593,13 +1607,14 @@ ${founderBlock()}
 ${cta(t("cta_title"), t("cta_text"), "light")}`;
 };
 
-const areaHero = (name, imgKey, slogan, phil) => `<section class="hero area-hero" aria-labelledby="area-h1">
+const areaHero = (name, imgKey, slogan, phil, fields) => `<section class="hero area-hero" aria-labelledby="area-h1">
   <img src="${U(IMG[imgKey], 2400)}" alt="" class="tone" fetchpriority="high">
   <div class="inner">
     <p class="eyebrow">${t("area_label")}</p>
     <h1 id="area-h1" lang="en" data-focus>${name}</h1>
     <p class="slogan" lang="en">${slogan}</p>
     <p class="phil">${phil}</p>
+    ${fields ? `<p class="eyebrow fields" lang="en">${fields}</p>` : ""}
   </div>
 </section>`;
 
@@ -1628,14 +1643,19 @@ ${moment(M.c05, t("c05_note"))}
 </div></section>
 ${cta(t("cta_title"), t("cta_text"), "light")}`;
 
-V.publicStrategy = () => areaHero("Public Strategy", "marble", M.c06, t("public_phil")) + `
-<section aria-labelledby="pw-t"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
+V.publicAffairs = () => areaHero("Public Affairs", "marble", M.pa, t("public_phil"), t("public_fields")) + `
+<section aria-labelledby="pa-t"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
+  <h2 id="pa-t" class="label" style="flex:1 1 240px">${t("pa_intro_t")}</h2>
+  <div class="how" style="flex:3 1 560px;max-width:760px"><p>${t("pa_p1")}</p><p>${t("pa_p2")}</p><p class="principle">${t("pa_p3")}</p></div>
+</div></section>
+<section aria-labelledby="pw-t" style="border-top:1px solid var(--rule)"><div class="wrap sec split" style="align-items:flex-start;gap:40px 80px">
   <h2 id="pw-t" class="label" style="flex:1 1 240px">${t("public_what")}</h2>
-  <dl class="svc" style="flex:3 1 560px">
-    <div><dt>${t("ps_pos")}</dt><dd>${t("ps_pos_d")}</dd></div>
-    <div><dt>${t("ps_comm")}</dt><dd>${t("ps_comm_d")}</dd></div>
-    <div><dt>${t("ps_voice")}</dt><dd>${t("ps_voice_d")}</dd></div>
-    <div><dt>${t("ps_rep")}</dt><dd>${t("ps_rep_d")}</dd></div>
+  <dl class="roles" style="flex:3 1 560px">
+    <div><dt lang="en">Institutional Relations</dt><dd>${t("pa_ir_d")}</dd></div>
+    <div><dt lang="en">Cultural Partnerships</dt><dd>${t("pa_cp_d")}</dd></div>
+    <div><dt lang="en">Stakeholder Engagement</dt><dd>${t("pa_se_d")}</dd></div>
+    <div><dt lang="en">Public Positioning</dt><dd>${t("pa_pp_d")}</dd></div>
+    <div><dt lang="en">Strategic Communication</dt><dd>${t("pa_sc_d")}</dd></div>
   </dl>
 </div></section>
 ${moment(M.c02, t("c02_note"))}
@@ -1829,10 +1849,10 @@ const buildIndex = () => [].concat(
   JOURNAL.map(a => ({ type:"Journal · " + catOf(a), title:L(a.title), text:L(a.intro), href:"#/journal/" + a.slug, img:a.img })),
   CULTURE.map(c => ({ type:t("type_case"), title:L(c.title), text:L(c.text), href:"#/culture", img:c.img })),
   CASES.map(c => ({ type:"Cases", title:L(c.title), text:L(c.intro), href:"#/cases/" + c.slug, img:c.img })),
-  PUBLIC.map(c => ({ type:t("type_ps"), title:L(c.title), text:L(c.text), href:"#/public-strategy", img:c.img })),
+  PUBLIC.map(c => ({ type:t("type_ps"), title:L(c.title), text:L(c.text), href:"#/public-affairs", img:c.img })),
   [{ type:t("type_page"), title:"Talent", text:t("talent_phil"), href:"#/talent", img:"pillars" },
    { type:t("type_page"), title:"Culture", text:t("culture_phil"), href:"#/culture", img:"gallery" },
-   { type:t("type_page"), title:"Public Strategy", text:t("public_phil"), href:"#/public-strategy", img:"marble" },
+   { type:t("type_page"), title:"Public Affairs", text:t("public_phil"), href:"#/public-affairs", img:"marble" },
    { type:t("type_page"), title:"Approach", text:t("approach_intro"), href:"#/approach", img:"darkroom" },
    { type:t("type_page"), title:t("contact_title"), text:t("contact_intro"), href:"#/contact", img:"upward" }]
 );
@@ -1855,7 +1875,7 @@ function runSearch(raw){
   sum.textContent = hits.length ? (hits.length === 1 ? t("s_one") : hits.length + " " + t("s_many")) + " “" + raw.trim() + "”" : t("s_none");
   const hl = s => { const n = norm(s), i = n.indexOf(q); return i < 0 ? esc(s) : esc(s.slice(0, i)) + "<mark>" + esc(s.slice(i, i + q.length)) + "</mark>" + esc(s.slice(i + q.length)); };
   res.innerHTML = hits.length ? `<ul style="list-style:none;margin:0;padding:0">${hits.map(r => `<li><a class="result" href="${r.href}">${img(r.img, "", "", 300)}<span style="display:flex;flex-direction:column;gap:8px;min-width:0"><span class="kicker">${esc(r.type)}</span><span class="c-title" style="font-size:20px">${hl(r.title)}</span><span class="c-sum">${hl(r.text)}</span></span></a></li>`).join("")}</ul>`
-    : `<div style="border-top:1px solid var(--rule);padding-top:36px;display:flex;flex-direction:column;gap:18px"><p style="margin:0;font-size:18px;line-height:1.7;color:var(--mist)">${esc(t("s_nomatch").replace("{q}", raw.trim()))}</p><div style="display:flex;flex-wrap:wrap;gap:0 28px"><a class="link-caps" href="#/talent">Talent</a><a class="link-caps" href="#/culture">Culture</a><a class="link-caps" href="#/public-strategy">Public Strategy</a></div></div>`;
+    : `<div style="border-top:1px solid var(--rule);padding-top:36px;display:flex;flex-direction:column;gap:18px"><p style="margin:0;font-size:18px;line-height:1.7;color:var(--mist)">${esc(t("s_nomatch").replace("{q}", raw.trim()))}</p><div style="display:flex;flex-wrap:wrap;gap:0 28px"><a class="link-caps" href="#/talent">Talent</a><a class="link-caps" href="#/culture">Culture</a><a class="link-caps" href="#/public-affairs">Public Affairs</a></div></div>`;
 }
 
 const legal = (title, intro, secs) => pageHead(title, intro) + `<div class="wrap" style="padding-bottom:clamp(88px,10vw,144px)"><div class="legal">${secs.map(s => `<section${s[2] ? ` id="${s[2]}"` : ""}><h2>${esc(L(s[0]))}</h2><p>${esc(L(s[1]))}</p></section>`).join("")}</div></div>`;
@@ -1904,7 +1924,8 @@ function route(){
   else if (sec === "journal" && !parts[1]){ html = V.journal(query); key = "journal"; title = "Journal"; }
   else if (sec === "journal"){ html = V.article(parts[1]); key = "journal"; const a = JOURNAL.find(x => x.slug === parts[1]); title = a ? L(a.title) : ""; }
   else if (sec === "culture"){ html = V.culture(); key = "culture"; title = "Culture"; }
-  else if (sec === "public-strategy"){ html = V.publicStrategy(); key = "public"; title = "Public Strategy"; }
+  else if (sec === "public-affairs"){ html = V.publicAffairs(); key = "public"; title = "Public Affairs"; }
+  else if (sec === "public-strategy"){ location.replace("#/public-affairs"); return; }
   else if (sec === "cases" && !parts[1]){ html = V.cases(); key = "cases"; title = "Cases"; }
   else if (sec === "cases"){ html = V.case(parts[1]); key = "cases"; const c = CASES.find(x => x.slug === parts[1]); title = c ? L(c.title) : ""; }
   else if (sec === "contact"){ html = V.contact(); key = "contact"; title = t("contact_title"); }
