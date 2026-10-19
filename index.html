@@ -913,33 +913,6 @@ mark{color:var(--fg);background:var(--surface-2);border-radius:3px}
 .area-hero .phil{font-size:15px !important;color:var(--fg2) !important;letter-spacing:0 !important;font-weight:400 !important}
 .area-hero .eyebrow{color:var(--fg2) !important;font-size:11px !important;letter-spacing:.12em !important}
 .area-hero > img{background-position:right 6% bottom 8%,0 0,0 0 !important}
-
-/* ---------- Spotify player (fixed, bottom right, every page) ---------- */
-:root{--sp-gap:6px;--sp-bottom:32px;--sp-lift:0px;--sp-tab-w:36px;--sp-h:80px}
-html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) + 16px)}
-.sp-player{position:fixed;right:calc(var(--sp-gap) + env(safe-area-inset-right,0px));bottom:calc(var(--sp-bottom) + var(--sp-lift) + env(safe-area-inset-bottom,0px));z-index:58;width:var(--sp-tab-w);height:var(--sp-h);transition:bottom .3s ease}
-.sp-tab{position:relative;z-index:2;width:var(--sp-tab-w);height:var(--sp-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:0;border:0;border-radius:12px;background:#1e1e1e;color:#fff;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-.sp-tab:hover{background:#2a2a2a}
-.sp-tab:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.sp-arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
-.sp-logo{transition:opacity .25s ease,transform .25s ease,max-height .3s ease,margin .3s ease;max-height:20px}
-.sp-player.is-open .sp-arrow{transform:rotate(180deg)}
-.sp-player.is-open .sp-logo{opacity:0;transform:scale(.6);max-height:0;margin-top:-10px}
-/* the panel sits behind the tab and slides out to the left */
-.sp-clip{position:absolute;z-index:1;right:calc(var(--sp-tab-w) - 12px);bottom:0;width:332px;height:var(--sp-h);overflow:hidden;border-radius:12px 0 0 12px;pointer-events:none}
-.sp-panel{width:100%;height:100%;padding-right:12px;background:#121212;border-radius:12px 0 0 12px;transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s linear .45s}
-.sp-player.is-open .sp-clip{pointer-events:auto}
-.sp-player.is-open .sp-panel{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s}
-.sp-panel iframe{display:block;width:320px;height:80px;border:0;border-radius:12px;background:transparent;opacity:0;transition:opacity .3s ease}
-.sp-panel iframe.is-loaded{opacity:1}
-@media (max-width:600px){
-  :root{--sp-bottom:16px}
-  .sp-clip{width:calc(100vw - var(--sp-gap) - var(--sp-tab-w) - 8px + 12px)}
-  .sp-panel iframe{width:100%}
-}
-@media (prefers-reduced-motion:reduce){ .sp-arrow,.sp-logo,.sp-panel,.sp-player{transition:none !important} }
-/* keep bottom-right content clear of the tab */
-.site-footer .wrap{padding-right:max(var(--pad), calc(var(--sp-gap) + var(--sp-tab-w) + 20px))}
 </style>
 </head>
 <body class="locked">
@@ -1102,19 +1075,6 @@ html{scroll-padding-bottom:calc(var(--sp-bottom) + var(--sp-h) + var(--sp-lift) 
     </div>
   </div>
 </footer>
-
-
-<aside class="sp-player" id="spPlayer" aria-label="Music player">
-  <div class="sp-clip">
-    <div class="sp-panel" id="spPanel">
-      <iframe id="spFrame" title="Spotify: LIONS playlist" data-src="https://open.spotify.com/embed/playlist/69ewM44u7Bj10Y46EBf4Wu?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-  </div>
-  <button type="button" class="sp-tab" id="spTab" aria-expanded="false" aria-controls="spPanel" aria-label="Open music player">
-    <svg class="sp-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg>
-    <svg class="sp-logo" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M6.6 9.2c3.6-1.1 7.6-.8 10.9 1.1M7.2 12.3c2.9-.8 6-.5 8.6.9M7.8 15.2c2.2-.6 4.5-.4 6.4.7" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round"/></svg>
-  </button>
-</aside>
 
 <dialog class="vmodal" id="vmodal" aria-labelledby="vmTitle">
   <div class="vm-bar">
@@ -2285,47 +2245,6 @@ applyStatic();
 let remembered = false;
 try { remembered = sessionStorage.getItem("lions-preview") === GATE_HASH; } catch(e){}
 if (remembered) unlock(); else gPw.focus();
-})();
-</script>
-
-<script>
-/* Spotify player — wireframe. The embed only loads on the first open (performance; third-party cookies). */
-(function(){
-  "use strict";
-  const box = document.getElementById("spPlayer"), tab = document.getElementById("spTab"), frame = document.getElementById("spFrame");
-  const L = { en:{ region:"Music player", open:"Open music player", close:"Close music player" },
-              pt:{ region:"Leitor de música", open:"Abrir leitor de música", close:"Fechar leitor de música" } };
-  const lang = () => (document.documentElement.lang || "en").startsWith("pt") ? "pt" : "en";
-  const label = () => { const o = box.classList.contains("is-open"); tab.setAttribute("aria-label", L[lang()][o ? "close" : "open"]); box.setAttribute("aria-label", L[lang()].region); };
-  function setOpen(open, focusTab){
-    if (open && !frame.src){ frame.addEventListener("load", () => frame.classList.add("is-loaded"), { once:true }); frame.src = frame.dataset.src; }
-    box.classList.toggle("is-open", open);
-    tab.setAttribute("aria-expanded", String(open));
-    label();
-    if (focusTab) tab.focus();
-  }
-  tab.addEventListener("click", () => setOpen(!box.classList.contains("is-open")));
-  document.addEventListener("keydown", e => {
-    if (e.key !== "Escape" || !box.classList.contains("is-open")) return;
-    if (document.querySelector("dialog[open]") || !document.getElementById("menuPanel").hidden) return;   // those handle Escape themselves
-    setOpen(false, box.contains(document.activeElement));
-  });
-  new MutationObserver(label).observe(document.documentElement, { attributes:true, attributeFilter:["lang"] });
-  /* lift the player above the cookie banner when they would overlap (small screens) */
-  const cookie = document.getElementById("cookie");
-  function lift(){
-    let h = 0;
-    if (!cookie.hidden){
-      const c = cookie.getBoundingClientRect(), p = { left: window.innerWidth - 6 - 36 - (box.classList.contains("is-open") ? 320 : 0) };
-      const base = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--sp-bottom")) || 32;
-      if (c.right > p.left) h = window.innerHeight - c.top - base + 12;
-    }
-    document.documentElement.style.setProperty("--sp-lift", Math.max(0, h) + "px");
-  }
-  new MutationObserver(lift).observe(cookie, { attributes:true, attributeFilter:["hidden"] });
-  window.addEventListener("resize", lift);
-  tab.addEventListener("click", () => setTimeout(lift, 0));
-  label(); lift();
 })();
 </script>
 </body>
